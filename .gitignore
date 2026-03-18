@@ -10,6 +10,11 @@ dist/
 .claude/
 ai-logs/
 
-# Editor
+# Editor & tooling
 .cursor/
 .cursorrules
+.editorconfig
+AGENTS.md
+LICENSE
+PROJECT_IDEOLOGY.md
+scripts/
