@@ -1,0 +1,15 @@
+
+# Dependencies & build
+node_modules/
+dist/
+
+# AI Workflow Rules
+.ai/
+.ai/audit-trail.log
+.ai/.ai-protection-cache/
+.claude/
+ai-logs/
+
+# Editor
+.cursor/
+.cursorrules

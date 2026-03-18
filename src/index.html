@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Арніка — сімейний медичний центр в Одесі | З 2003 року</title>
+  <meta name="description" content="Сімейний медичний центр «Арніка» в Одесі на вул. Успенська, 59. Лікарі вищої категорії, УЗД-діагностика, лабораторія. Запис онлайн. Досвід з 2003 року.">
+  <meta name="keywords" content="медичний центр Одеса, сімейний лікар Одеса, УЗД Одеса, кардіолог Одеса, Арніка клініка">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnika.od.ua/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Арніка — сімейний медичний центр в Одесі">
+  <meta property="og:description" content="Досвідчені лікарі вищої категорії, УЗД, лабораторія. Одеса, Успенська 59. З 2003 року.">
+  <meta property="og:url"         content="https://arnika.od.ua/">
+  <meta property="og:image"       content="https://arnika.od.ua/og-image.jpg">
+  <meta property="og:locale"      content="uk_UA">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon-arnika.svg">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+
+  <!-- LocalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Арніка — сімейний медичний центр",
+    "description": "Багатопрофільна клініка вищої категорії в Одесі. Досвід з 2003 року.",
+    "url": "https://arnika.od.ua",
+    "telephone": "+380482700001",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "вул. Успенська, 59",
+      "addressLocality": "Одеса",
+      "addressRegion": "Одеська область",
+      "postalCode": "65000",
+      "addressCountry": "UA"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "16:00" }
+    ],
+    "foundingDate": "2003",
+    "medicalSpecialty": ["Cardiology","Neurology","GeneralPractice","Pediatrics","Endocrinology"],
+    "sameAs": []
+  }
+  </script>
+
+  <style>
+    /* Hero section */
+    .hero {
+      min-height: calc(100vh - var(--header-h));
+      min-height: calc(100svh - var(--header-h));
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f0faf5 0%, #e4f5ed 60%, #d5efe3 100%);
+      padding: 64px 0;
+      overflow: hidden;
+    }
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 64px;
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,125,73,0.1);
+      color: var(--color-primary);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero__badge svg { width: 16px; height: 16px; }
+    .hero__title { color: var(--color-text); margin-bottom: 20px; }
+    .hero__title span { color: var(--color-primary); }
+    .hero__subtitle { font-size: 1.125rem; margin-bottom: 36px; max-width: 480px; }
+    .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero__trust {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+    .hero__trust-icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1rem; flex-shrink: 0;
+    }
+    .hero__img-wrap {
+      position: relative;
+    }
+    .hero__img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero__img-badge {
+      position: absolute;
+      bottom: 32px;
+      left: -24px;
+      background: white;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero__img-badge-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(0,125,73,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-primary);
+    }
+    .hero__img-badge-num { font-size: 1.5rem; font-weight: 800; color: var(--color-text); line-height: 1; }
+    .hero__img-badge-lbl { font-size: 0.8125rem; color: var(--color-text-muted); }
+    @media (max-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero__img-wrap { max-width: 480px; margin: 0 auto; }
+      .hero__img { aspect-ratio: 16/9; }
+      .hero__img-badge { left: 16px; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 48px 0; min-height: auto; }
+      .hero__actions { flex-direction: column; }
+      .hero__actions .btn { text-align: center; }
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      background: var(--color-primary);
+      padding: 32px 0;
+    }
+    .stats-bar__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .stats-bar .stat-item__num { color: white; }
+    .stats-bar .stat-item__label { color: rgba(255,255,255,0.75); }
+    @media (max-width: 600px) {
+      .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Арніка — на головну">
+        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" width="44" height="44">
+      </a>
+      <nav class="header__nav" aria-label="Головне меню">
+        <a href="index.html"    class="nav__link">Головна</a>
+        <a href="services.html" class="nav__link">Послуги</a>
+        <a href="doctors.html"  class="nav__link">Лікарі</a>
+        <a href="about.html"    class="nav__link">Про нас</a>
+        <a href="contacts.html" class="nav__link">Контакти</a>
+      </nav>
+      <a href="contacts.html#booking" class="btn btn--primary btn--sm header__cta">Записатись</a>
+      <button class="burger" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<main>
+  <section class="hero" aria-label="Головний банер">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Медична допомога з 2003 року
+          </div>
+          <h1 class="hero__title">
+            Арніка — турбота<br>про здоров'я<br><span>з 2003 року</span>
+          </h1>
+          <p class="hero__subtitle">
+            Сімейний медичний центр в Одесі. Лікарі вищої категорії, сучасна діагностика та щирий підхід до кожного пацієнта.
+          </p>
+          <div class="hero__actions">
+            <a href="contacts.html#booking" class="btn btn--primary btn--lg">Записатись на прийом</a>
+            <a href="services.html" class="btn btn--outline btn--lg">Всі послуги</a>
+          </div>
+          <div class="hero__trust">
+            <div class="hero__trust-icon">✓</div>
+            <span>Реєстраційний номер 4355 — офіційна клініка вищої категорії</span>
+          </div>
+        </div>
+        <div class="hero__img-wrap">
+          <img
+            src="../5300.webp"
+            alt="Інтер'єр клініки Арніка — затишна та сучасна атмосфера"
+            class="hero__img"
+            width="600"
+            height="750"
+            loading="eager"
+            fetchpriority="high"
+          >
+          <div class="hero__img-badge">
+            <div class="hero__img-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div>
+              <div class="hero__img-badge-num">20+</div>
+              <div class="hero__img-badge-lbl">років досвіду</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar" aria-label="Цифри та досягнення">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div class="stat-item">
+          <div class="stat-item__num">20+</div>
+          <div class="stat-item__label">років на ринку</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__num">15+</div>
+          <div class="stat-item__label">спеціалістів</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__num">10+</div>
+          <div class="stat-item__label">напрямків</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__num">5000+</div>
+          <div class="stat-item__label">пацієнтів на рік</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЧОМУ МИ -->
+  <section class="section section--alt" aria-labelledby="why-us-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 id="why-us-heading">Чому обирають Арніку</h2>
+        <p>Ми дбаємо про кожного пацієнта — від першого візиту до повного одужання</p>
+      </div>
+      <div class="grid-4">
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Понад 20 років досвіду</h3>
+          <p class="feature-card__desc">Засновані у 2003 році. Реєстраційний номер 4355 — свідчення нашого досвіду та відповідальності.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 12c0-1.23-.37-2.37-1-3.32V6a2 2 0 00-2-2h-1.5A2 2 0 0013 2h-2a2 2 0 00-2 2H7.5a2 2 0 00-2 2v2.68A5.5 5.5 0 0019.5 12zm-5.5 2.5A2.5 2.5 0 1111.5 12a2.5 2.5 0 002.5 2.5z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Власне обладнання</h3>
+          <p class="feature-card__desc">Сучасна УЗД-діагностика, лабораторія та діагностичне обладнання — все в одному місці.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Лікарі вищої категорії</h3>
+          <p class="feature-card__desc">Наші спеціалісти мають вищу та першу кваліфікаційну категорію з підтвердженим досвідом роботи.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Затишна атмосфера</h3>
+          <p class="feature-card__desc">Ми розуміємо, що відвідування лікаря буває непросто. Тому робимо все, щоб ви відчували турботу і спокій.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- НАШІ ЛІКАРІ (preview) -->
+  <section class="section" aria-labelledby="doctors-preview-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 id="doctors-preview-heading">Наші лікарі</h2>
+        <p>Команда досвідчених спеціалістів, яким довіряють тисячі пацієнтів Одеси</p>
+      </div>
+      <div class="grid-3">
+        <div class="doctor-card">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Лікар-терапевт" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Іванова Олена Петрівна</div>
+          <div class="doctor-card__spec">Терапевт</div>
+          <div class="doctor-card__cat">Вища категорія</div>
+          <a href="contacts.html#booking" class="btn btn--outline btn--sm doctor-card__btn">Записатись</a>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Лікар-кардіолог" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Коваленко Микола Васильович</div>
+          <div class="doctor-card__spec">Кардіолог</div>
+          <div class="doctor-card__cat">Вища категорія</div>
+          <a href="contacts.html#booking" class="btn btn--outline btn--sm doctor-card__btn">Записатись</a>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Лікар-невролог" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Петренко Андрій Сергійович</div>
+          <div class="doctor-card__spec">Невролог</div>
+          <div class="doctor-card__cat">Вища категорія</div>
+          <a href="contacts.html#booking" class="btn btn--outline btn--sm doctor-card__btn">Записатись</a>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="doctors.html" class="btn btn--outline btn--lg">Всі лікарі</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВІДГУКИ -->
+  <section class="section section--alt" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 id="reviews-heading">Що кажуть пацієнти</h2>
+        <p>Реальні відгуки від наших пацієнтів</p>
+      </div>
+      <div class="grid-3">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-card__text">«Клініка просто чудова! Лікарі уважні, обладнання сучасне. Завжди рекомендую своїм близьким. Записуватись зручно, черг немає.»</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">О</div>
+            <div>
+              <div class="review-card__name">Ольга Мельник</div>
+              <div class="review-card__date">Пацієнт клініки</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-card__text">«Дуже вдячна лікарям Арніки. Нарешті знайшла клініку, де ставляться до тебе по-людськи. Обслуговування на вищому рівні.»</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">Н</div>
+            <div>
+              <div class="review-card__name">Наталія Бондаренко</div>
+              <div class="review-card__date">Пацієнт клініки</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-card__text">«Ходжу сюди вже 5 років. Зручне розташування, кваліфіковані лікарі, приємна атмосфера. Дякую всьому колективу!»</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">В</div>
+            <div>
+              <div class="review-card__name">Василь Сидоренко</div>
+              <div class="review-card__date">Пацієнт клініки</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-label="Запис на прийом">
+    <div class="container">
+      <h2>Готові прийти до нас?</h2>
+      <p>Запишіться онлайн або зателефонуйте — ми підберемо зручний час</p>
+      <div class="cta-buttons">
+        <a href="contacts.html#booking" class="btn btn--primary btn--lg">Записатись онлайн</a>
+        <a href="tel:+380482700001" class="btn btn--white btn--lg">Зателефонувати</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" class="footer__logo" width="52" height="47">
+        <p class="footer__tagline">Сімейний медичний центр у Одесі.<br>Турбота про здоров'я з 2003 року.</p>
+      </div>
+      <div>
+        <p class="footer__heading">Навігація</p>
+        <nav class="footer__links" aria-label="Футер навігація">
+          <a href="index.html"    class="footer__link">Головна</a>
+          <a href="services.html" class="footer__link">Послуги</a>
+          <a href="doctors.html"  class="footer__link">Лікарі</a>
+          <a href="about.html"    class="footer__link">Про нас</a>
+          <a href="contacts.html" class="footer__link">Контакти</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__heading">Контакти</p>
+        <div class="footer__contact">
+          <a href="tel:+380482700001" class="footer__phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            (048) 700-00-01
+          </a>
+          <a href="tel:+380482700002" class="footer__phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            (048) 700-00-02
+          </a>
+          <p class="footer__hours">Пн–Пт: 8:00–20:00<br>Сб: 9:00–16:00<br>Нд: вихідний</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2025 Арніка Медичний Центр. Всі права захищені.</span>
+      <span class="footer__copy">Реєстраційний номер: 4355 від 2003 р.</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

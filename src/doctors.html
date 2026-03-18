@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лікарі — Арніка Медичний Центр | Одеса</title>
+  <meta name="description" content="Команда лікарів клініки Арніка в Одесі: терапевт, невролог, гінеколог, уролог, ЛОР, гастроентеролог, ендокринолог, психолог. Лікарі вищої категорії, кандидати наук. Запис онлайн.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnika.od.ua/doctors.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Лікарі — Арніка Медичний Центр">
+  <meta property="og:description" content="Досвідчені лікарі вищої категорії та кандидати наук. Понад 20 спеціалістів у різних напрямках медицини. Одеса.">
+  <meta property="og:url"         content="https://arnika.od.ua/doctors.html">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon-arnika.svg">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Арніка — на головну">
+        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" width="44" height="44">
+      </a>
+      <nav class="header__nav" aria-label="Головне меню">
+        <a href="index.html"    class="nav__link">Головна</a>
+        <a href="services.html" class="nav__link">Послуги</a>
+        <a href="doctors.html"  class="nav__link">Лікарі</a>
+        <a href="about.html"    class="nav__link">Про нас</a>
+        <a href="contacts.html" class="nav__link">Контакти</a>
+      </nav>
+      <a href="contacts.html#booking" class="btn btn--primary btn--sm header__cta">Записатись</a>
+      <button class="burger" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Наші лікарі">
+    <div class="container">
+      <h1>Наші лікарі</h1>
+      <p>Команда досвідчених спеціалістів вищої категорії — кандидати наук і доценти, яким довіряють тисячі пацієнтів Одеси</p>
+    </div>
+  </section>
+
+  <!-- DOCTORS -->
+  <section class="section" aria-labelledby="doctors-heading">
+    <div class="container">
+      <h2 id="doctors-heading" class="visually-hidden">Каталог лікарів</h2>
+
+      <!-- Filter -->
+      <div class="filter-tabs" role="group" aria-label="Фільтр за спеціалізацією">
+        <button class="filter-tab filter-tab--active" data-filter="all">Всі</button>
+        <button class="filter-tab" data-filter="therapist">Терапевт</button>
+        <button class="filter-tab" data-filter="neurologist">Невролог</button>
+        <button class="filter-tab" data-filter="gynecologist">Гінеколог</button>
+        <button class="filter-tab" data-filter="urologist">Уролог</button>
+        <button class="filter-tab" data-filter="ent">ЛОР</button>
+        <button class="filter-tab" data-filter="gastroenterologist">Гастроентеролог</button>
+        <button class="filter-tab" data-filter="endocrinologist">Ендокринолог</button>
+        <button class="filter-tab" data-filter="diagnostics">Діагностика</button>
+        <button class="filter-tab" data-filter="psychologist">Психолог</button>
+        <button class="filter-tab" data-filter="rehabilitation">Реабілітація</button>
+      </div>
+
+      <!-- Doctors grid -->
+      <div class="grid-3" id="doctors-grid">
+
+        <!-- Данчева -->
+        <div class="doctor-card" data-spec="psychologist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Психолог Данчева Тетяна Дмитрівна" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Данчева Тетяна Дмитрівна</div>
+          <div class="doctor-card__spec">Психолог, директор</div>
+          <div class="doctor-card__cat">Канд. психол. наук · 25 р. досвіду</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/dancheva.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Хохлов -->
+        <div class="doctor-card" data-spec="urologist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Уролог Хохлов Сергій Борисович" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Хохлов Сергій Борисович</div>
+          <div class="doctor-card__spec">Уролог</div>
+          <div class="doctor-card__cat">Канд. мед. наук · 32 р. досвіду</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/hokhlov.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Шевелева -->
+        <div class="doctor-card" data-spec="gynecologist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Гінеколог Шевелева Валентина Іванівна" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Шевелева Валентина Іванівна</div>
+          <div class="doctor-card__spec">Гінеколог-акушер</div>
+          <div class="doctor-card__cat">Вища категорія · 40+ р. досвіду</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/sheveleva.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Самсонова -->
+        <div class="doctor-card" data-spec="gynecologist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Гінеколог Самсонова Світлана Іванівна" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Самсонова Світлана Іванівна</div>
+          <div class="doctor-card__spec">Гінеколог</div>
+          <div class="doctor-card__cat">Вища категорія</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/samsonova.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Манюта -->
+        <div class="doctor-card" data-spec="ent">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="ЛОР Манюта Олег Іванович" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Манюта Олег Іванович</div>
+          <div class="doctor-card__spec">ЛОР (оториноларинголог)</div>
+          <div class="doctor-card__cat">Канд. мед. наук, доцент · 30+ р.</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/manyuta.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Ковальчук -->
+        <div class="doctor-card" data-spec="gastroenterologist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Гастроентеролог Ковальчук Петро Іванович" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Ковальчук Петро Іванович</div>
+          <div class="doctor-card__spec">Гастроентеролог</div>
+          <div class="doctor-card__cat">Вища категорія · 32 р. досвіду</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/kovalchuk.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Пантак -->
+        <div class="doctor-card" data-spec="neurologist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Невролог Пантак Ірина Степанівна" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Пантак Ірина Степанівна</div>
+          <div class="doctor-card__spec">Невролог</div>
+          <div class="doctor-card__cat">Вища категорія</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/pantak.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Клименко -->
+        <div class="doctor-card" data-spec="neurologist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Нейропатолог Клименко Ірина Петрівна" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Клименко Ірина Петрівна</div>
+          <div class="doctor-card__spec">Нейропатолог</div>
+          <div class="doctor-card__cat">Вища категорія · 20+ р. досвіду</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/klymenko.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Турська -->
+        <div class="doctor-card" data-spec="endocrinologist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Ендокринолог Турська Тетяна Василівна" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Турська Тетяна Василівна</div>
+          <div class="doctor-card__spec">Ендокринолог</div>
+          <div class="doctor-card__cat">Вища категорія</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/turska.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Шуневич -->
+        <div class="doctor-card" data-spec="therapist">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Терапевт Шуневич Людмила Іванівна" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Шуневич Людмила Іванівна</div>
+          <div class="doctor-card__spec">Терапевт-гомеопат</div>
+          <div class="doctor-card__cat">Вища категорія</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/shunevych.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Карбоінова -->
+        <div class="doctor-card" data-spec="diagnostics">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Лікар УЗД Карбоінова Людмила Миколаївна" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Карбоінова Людмила Миколаївна</div>
+          <div class="doctor-card__spec">Функціональна діагностика</div>
+          <div class="doctor-card__cat">УЗД · ЕКГ · Холтер · Вища кат.</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/karboinova.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+        <!-- Абакумов -->
+        <div class="doctor-card" data-spec="rehabilitation">
+          <div class="doctor-card__avatar">
+            <img src="/doctor.svg" alt="Реабілітолог Абакумов Василь Сергійович" width="88" height="114">
+          </div>
+          <div class="doctor-card__name">Абакумов Василь Сергійович</div>
+          <div class="doctor-card__spec">Масаж та реабілітація</div>
+          <div class="doctor-card__cat">Спеціаліст з реабілітації</div>
+          <div class="doctor-card__actions">
+            <a href="doctors/abakumov.html" class="btn btn--outline btn--sm">Детальніше</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-label="Запис на прийом">
+    <div class="container">
+      <h2>Не знайшли потрібного спеціаліста?</h2>
+      <p>Зателефонуйте нам — ми підберемо лікаря, який вам потрібен</p>
+      <div class="cta-buttons">
+        <a href="contacts.html#booking" class="btn btn--primary btn--lg">Записатись онлайн</a>
+        <a href="tel:+380487000101" class="btn btn--white btn--lg">Зателефонувати</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" class="footer__logo" width="52" height="47">
+        <p class="footer__tagline">Сімейний медичний центр у Одесі.<br>Турбота про здоров'я з 2003 року.</p>
+      </div>
+      <div>
+        <p class="footer__heading">Навігація</p>
+        <nav class="footer__links" aria-label="Футер навігація">
+          <a href="index.html"    class="footer__link">Головна</a>
+          <a href="services.html" class="footer__link">Послуги</a>
+          <a href="doctors.html"  class="footer__link">Лікарі</a>
+          <a href="about.html"    class="footer__link">Про нас</a>
+          <a href="contacts.html" class="footer__link">Контакти</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__heading">Контакти</p>
+        <div class="footer__contact">
+          <a href="tel:+380487000101" class="footer__phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            (048) 700-01-01
+          </a>
+          <p class="footer__hours">Пн–Пт: 8:00–20:00<br>Сб: 9:00–16:00<br>Нд: вихідний</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2025 Арніка Медичний Центр. Всі права захищені.</span>
+      <span class="footer__copy">Реєстраційний номер: 4355 від 2003 р.</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="./js/main.js"></script>
+<script type="module" src="./js/doctors.js"></script>
+</body>
+</html>

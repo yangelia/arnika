@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти — Арніка Медичний Центр | Одеса, Успенська 59</title>
+  <meta name="description" content="Контакти клініки Арніка: Одеса, вул. Успенська, 59. Телефони, режим роботи, карта проїзду. Запис на прийом онлайн. Пн–Пт 8:00–20:00, Сб 9:00–16:00.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arnika.od.ua/contacts.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Контакти — Арніка Медичний Центр">
+  <meta property="og:description" content="Одеса, вул. Успенська, 59. Телефони та запис онлайн. Пн–Пт 8:00–20:00.">
+  <meta property="og:url"         content="https://arnika.od.ua/contacts.html">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon-arnika.svg">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+
+  <style>
+    .contacts-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .contacts-layout { grid-template-columns: 1fr; }
+    }
+
+    .contacts-info { display: flex; flex-direction: column; gap: 16px; }
+
+    .schedule-table { width: 100%; border-collapse: collapse; }
+    .schedule-table td { padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 0.9375rem; }
+    .schedule-table td:first-child { color: var(--color-text-muted); padding-right: 24px; }
+    .schedule-table td:last-child { font-weight: 600; color: var(--color-text); text-align: right; }
+    .schedule-table tr:last-child td { border-bottom: none; }
+    .schedule-closed { color: var(--color-accent) !important; }
+
+    .booking-form-wrap {
+      background: var(--color-bg);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+    .booking-form-wrap h2 { margin-bottom: 8px; }
+    .booking-form-wrap > p { margin-bottom: 28px; }
+    @media (max-width: 600px) {
+      .booking-form-wrap { padding: 28px 20px; }
+    }
+
+    .messenger-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .messenger-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all var(--transition);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text);
+    }
+    .messenger-link:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .messenger-link svg { width: 18px; height: 18px; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Арніка — на головну">
+        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" width="44" height="44">
+      </a>
+      <nav class="header__nav" aria-label="Головне меню">
+        <a href="index.html"    class="nav__link">Головна</a>
+        <a href="services.html" class="nav__link">Послуги</a>
+        <a href="doctors.html"  class="nav__link">Лікарі</a>
+        <a href="about.html"    class="nav__link">Про нас</a>
+        <a href="contacts.html" class="nav__link">Контакти</a>
+      </nav>
+      <a href="#booking" class="btn btn--primary btn--sm header__cta">Записатись</a>
+      <button class="burger" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Контакти клініки">
+    <div class="container">
+      <h1>Контакти</h1>
+      <p>Ми знаходимось у центрі Одеси — зручно доїхати з будь-якого мікрорайону</p>
+    </div>
+  </section>
+
+  <!-- CONTACTS INFO + BOOKING FORM -->
+  <section class="section" aria-labelledby="contacts-heading">
+    <div class="container">
+      <h2 id="contacts-heading" class="visually-hidden">Контактна інформація</h2>
+      <div class="contacts-layout">
+
+        <!-- Контактна інформація -->
+        <div>
+          <div class="contacts-info">
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item__label">Адреса</div>
+                <div class="contact-item__value">
+                  <a href="https://maps.google.com/?q=Одеса+Успенська+59" target="_blank" rel="noopener">
+                    м. Одеса, вул. Успенська, 59
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item__label">Телефони</div>
+                <div class="contact-item__value">
+                  <a href="tel:+380482700001">(048) 700-00-01</a><br>
+                  <a href="tel:+380482700002">(048) 700-00-02</a><br>
+                  <a href="tel:+380482700003">(048) 700-00-03</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item__label">Месенджери</div>
+                <div class="contact-item__value" style="margin-top:8px">
+                  <div class="messenger-links">
+                    <a href="viber://chat?number=%2B380482700001" class="messenger-link">
+                      <svg viewBox="0 0 24 24" fill="#7360F2"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.868 16.832c-.227.68-.952 1.168-1.707 1.168-.238 0-.48-.047-.716-.143-1.714-.674-3.262-1.7-4.536-2.975-1.275-1.274-2.301-2.822-2.975-4.536-.362-.917-.147-1.97.54-2.657l.647-.647c.294-.295.684-.456 1.098-.456.414 0 .804.161 1.098.456l1.604 1.604c.294.294.456.684.456 1.098 0 .414-.161.804-.456 1.098l-.647.647c.527.896 1.194 1.7 1.982 2.374.785.672 1.666 1.212 2.617 1.605l.647-.647c.294-.295.684-.456 1.098-.456.414 0 .804.161 1.098.456l1.604 1.604c.603.603.603 1.593 0 2.196l-.453.453z"/></svg>
+                      Viber
+                    </a>
+                    <a href="https://t.me/arnika_odessa" class="messenger-link" target="_blank" rel="noopener">
+                      <svg viewBox="0 0 24 24" fill="#2CA5E0"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.03 9.566c-.15.669-.54.832-1.094.517l-3-2.21-1.448 1.394c-.16.16-.295.295-.604.295l.214-3.053 5.56-5.023c.242-.214-.052-.333-.373-.119l-6.871 4.326-2.962-.925c-.643-.203-.657-.643.136-.953l11.567-4.46c.536-.196 1.004.13.905.645z"/></svg>
+                      Telegram
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item__label">Режим роботи</div>
+                <div class="contact-item__value" style="margin-top:8px">
+                  <table class="schedule-table">
+                    <tbody>
+                      <tr><td>Понеділок–П'ятниця</td><td>8:00 – 20:00</td></tr>
+                      <tr><td>Субота</td><td>9:00 – 16:00</td></tr>
+                      <tr><td>Неділя</td><td class="schedule-closed">Вихідний</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking form -->
+        <div id="booking">
+          <div class="booking-form-wrap">
+            <h2>Записатись на прийом</h2>
+            <p>Залиште заявку — ми зв'яжемось із вами та підтвердимо час</p>
+
+            <form class="form" name="booking" method="POST" action="#" novalidate>
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="name">Ваше ім'я *</label>
+                  <input
+                    class="form__input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Іванова Олена"
+                    required
+                    autocomplete="name"
+                  >
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="phone">Телефон *</label>
+                  <input
+                    class="form__input"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+38 (050) 000-00-00"
+                    required
+                    autocomplete="tel"
+                  >
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="doctor">Лікар / напрямок</label>
+                <select class="form__select" id="doctor" name="doctor">
+                  <option value="">— Оберіть спеціаліста —</option>
+                  <optgroup label="Терапія">
+                    <option value="therapist">Терапевт</option>
+                  </optgroup>
+                  <optgroup label="Кардіологія">
+                    <option value="cardiologist">Кардіолог</option>
+                  </optgroup>
+                  <optgroup label="Неврологія">
+                    <option value="neurologist">Невролог</option>
+                  </optgroup>
+                  <optgroup label="Діагностика">
+                    <option value="uzi">УЗД діагностика</option>
+                    <option value="lab">Лабораторія</option>
+                  </optgroup>
+                  <optgroup label="Інше">
+                    <option value="pediatrician">Педіатр</option>
+                    <option value="endocrinologist">Ендокринолог</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="datetime">Зручний час</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="datetime"
+                  name="datetime"
+                  placeholder="Наприклад: вівторок після 15:00"
+                >
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="comment">Коментар (необов'язково)</label>
+                <textarea
+                  class="form__textarea"
+                  id="comment"
+                  name="comment"
+                  placeholder="Опишіть вашу скаргу або побажання..."
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div class="form__checkbox">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">
+                  Я погоджуюсь на обробку персональних даних відповідно до
+                  <a href="#" style="color:var(--color-primary);text-decoration:underline">Політики конфіденційності</a>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--lg btn--full">
+                Відправити заявку
+              </button>
+
+              <p style="font-size:0.8125rem;text-align:center;color:var(--color-text-muted)">
+                Або зателефонуйте нам: <a href="tel:+380482700001" style="color:var(--color-primary);font-weight:600">(048) 700-00-01</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section section--alt" aria-labelledby="map-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 id="map-heading">Як нас знайти</h2>
+        <p>м. Одеса, вул. Успенська, 59 — центр міста, поруч із зупинками транспорту</p>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2747.123456789!2d30.7233!3d46.4835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sУспенська+59%2C+Одеса!5e0!3m2!1suk!2sua!4v1234567890"
+          width="100%"
+          height="420"
+          style="border:0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Карта розташування клініки Арніка"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" class="footer__logo" width="52" height="47">
+        <p class="footer__tagline">Сімейний медичний центр у Одесі.<br>Турбота про здоров'я з 2003 року.</p>
+      </div>
+      <div>
+        <p class="footer__heading">Навігація</p>
+        <nav class="footer__links" aria-label="Футер навігація">
+          <a href="index.html"    class="footer__link">Головна</a>
+          <a href="services.html" class="footer__link">Послуги</a>
+          <a href="doctors.html"  class="footer__link">Лікарі</a>
+          <a href="about.html"    class="footer__link">Про нас</a>
+          <a href="contacts.html" class="footer__link">Контакти</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__heading">Контакти</p>
+        <div class="footer__contact">
+          <a href="tel:+380482700001" class="footer__phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            (048) 700-00-01
+          </a>
+          <a href="tel:+380482700002" class="footer__phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            (048) 700-00-02
+          </a>
+          <p class="footer__hours">Пн–Пт: 8:00–20:00<br>Сб: 9:00–16:00<br>Нд: вихідний</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2025 Арніка Медичний Центр. Всі права захищені.</span>
+      <span class="footer__copy">Реєстраційний номер: 4355 від 2003 р.</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

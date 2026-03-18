@@ -1,0 +1,4 @@
+# Generated lock files — no secrets possible, skip for performance
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
