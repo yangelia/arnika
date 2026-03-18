@@ -10,29 +10,11 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/components.css">
+  <script type="module" src="../js/components.js"></script>
 </head>
 <body>
 
-<header class="header">
-  <div class="container">
-    <div class="header__inner">
-      <a href="../index.html" class="header__logo" aria-label="Арніка — на головну">
-        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" width="44" height="44">
-      </a>
-      <nav class="header__nav" aria-label="Головне меню">
-        <a href="../index.html"    class="nav__link">Головна</a>
-        <a href="../services.html" class="nav__link">Послуги</a>
-        <a href="../doctors.html"  class="nav__link nav__link--active">Лікарі</a>
-        <a href="../about.html"    class="nav__link">Про нас</a>
-        <a href="../contacts.html" class="nav__link">Контакти</a>
-      </nav>
-      <a href="../contacts.html#booking" class="btn btn--primary btn--sm header__cta">Записатись</a>
-      <button class="burger" aria-label="Відкрити меню" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
+<app-header></app-header>
 
 <main>
   <section class="doctor-profile" aria-label="Профіль лікаря">
@@ -98,40 +80,7 @@
   </section>
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div>
-        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" class="footer__logo" width="52" height="47">
-        <p class="footer__tagline">Сімейний медичний центр у Одесі.<br>Турбота про здоров'я з 2003 року.</p>
-      </div>
-      <div>
-        <p class="footer__heading">Навігація</p>
-        <nav class="footer__links" aria-label="Футер навігація">
-          <a href="../index.html"    class="footer__link">Головна</a>
-          <a href="../services.html" class="footer__link">Послуги</a>
-          <a href="../doctors.html"  class="footer__link">Лікарі</a>
-          <a href="../about.html"    class="footer__link">Про нас</a>
-          <a href="../contacts.html" class="footer__link">Контакти</a>
-        </nav>
-      </div>
-      <div>
-        <p class="footer__heading">Контакти</p>
-        <div class="footer__contact">
-          <a href="tel:+380487000101" class="footer__phone">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            (048) 700-01-01
-          </a>
-          <p class="footer__hours">Пн–Пт: 8:00–20:00<br>Сб: 9:00–16:00<br>Нд: вихідний</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span class="footer__copy">© 2025 Арніка Медичний Центр. Всі права захищені.</span>
-      <span class="footer__copy">Реєстраційний номер: 4355 від 2003 р.</span>
-    </div>
-  </div>
-</footer>
+<app-footer></app-footer>
 
 <script type="module" src="../js/main.js"></script>
 </body>

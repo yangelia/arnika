@@ -1,3 +1,6 @@
+/* === GOOGLE FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+
 /* === RESET & BASE === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -36,12 +39,12 @@ h1, h2, h3, h4, h5 { line-height: 1.2; }
   --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
 
   --transition: 0.2s ease;
-  --max-width:  1200px;
-  --header-h:   72px;
+  --max-width:  1400px;
+  --header-h:   88px;
 }
 
 /* === TYPOGRAPHY === */
-h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 700; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 600; font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.01em; }
 h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; letter-spacing: -0.01em; }
 h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); font-weight: 600; }
 h4 { font-size: 1rem; font-weight: 600; }
@@ -52,7 +55,7 @@ p  { font-size: 1rem; color: var(--color-text-muted); }
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 4vw, 48px);
 }
 .section { padding: 80px 0; }
 .section--alt { background: var(--color-bg-soft); }
@@ -79,6 +82,22 @@ p  { font-size: 1rem; color: var(--color-text-muted); }
   .section { padding: 56px 0; }
   .container { padding: 0 16px; }
 }
+
+/* === WEB COMPONENTS === */
+/* :not(:defined) = before JS runs. Reserves exact space so layout doesn't shift. */
+app-header:not(:defined) {
+  display: block;
+  height: var(--header-h);
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid var(--color-border);
+}
+app-footer:not(:defined) {
+  display: block;
+  min-height: 300px;
+  background: #0A1F14;
+}
+/* After component renders it replaces itself — display:contents makes the wrapper invisible */
+app-header, app-footer { display: contents; }
 
 /* === ACCESSIBILITY === */
 .visually-hidden {
