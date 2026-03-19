@@ -18,18 +18,22 @@ class AppHeader extends HTMLElement {
       )
       .join("\n        ");
 
+    const logoInner = `
+        <img src="/logo-Arnika-top.svg" alt="" width="60" height="60" aria-hidden="true">
+        <div class="header__logo-text">
+          <span class="header__logo-name">ArnikA</span>
+          <span class="header__logo-sub">Medical Center</span>
+        </div>`;
+    const logoEl = active === 'index'
+      ? `<span class="header__logo" aria-label="Арніка Медичний Центр">${logoInner}</span>`
+      : `<a href="/index.html" class="header__logo" aria-label="Арніка — на головну">${logoInner}</a>`;
+
     const tpl = document.createElement("template");
     tpl.innerHTML = `
 <header class="header">
   <div class="container">
     <div class="header__inner">
-      <a href="/index.html" class="header__logo" aria-label="Арніка — на головну">
-        <img src="/logo-Arnika-top.svg" alt="" width="60" height="60" aria-hidden="true">
-        <div class="header__logo-text">
-          <span class="header__logo-name">ArnikA</span>
-          <span class="header__logo-sub">Medical Center</span>
-        </div>
-      </a>
+      ${logoEl}
       <nav class="header__nav" aria-label="Головне меню">
         ${navItems}
       </nav>

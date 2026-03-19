@@ -1,410 +1,1049 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Послуги — Арніка Медичний Центр | Одеса</title>
-  <meta name="description" content="Медичні послуги клініки Арніка в Одесі: фізіотерапія, HiToP, лікування болю, терапія, діагностика. Вул. Успенська, 59.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://arnika.od.ua/services.html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Послуги — Арніка Медичний Центр | Одеса</title>
+    <meta
+      name="description"
+      content="Медичні послуги клініки Арніка в Одесі: діагностика, лікувальні процедури, авторські методики. Вул. Успенська, 59."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://arnika.od.ua/services.html" />
 
-  <meta property="og:type"        content="website">
-  <meta property="og:title"       content="Послуги — Арніка Медичний Центр">
-  <meta property="og:description" content="Широкий спектр медичних послуг: фізіотерапія, лікування болю, терапія, діагностика. Одеса, Успенська 59.">
-  <meta property="og:url"         content="https://arnika.od.ua/services.html">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Послуги — Арніка Медичний Центр" />
+    <meta
+      property="og:description"
+      content="Діагностика, лікувальні процедури та авторські методики. Одеса, Успенська 59."
+    />
+    <meta property="og:url" content="https://arnika.od.ua/services.html" />
 
-  <link rel="icon" type="image/svg+xml" href="/favicon-arnika.svg">
-  <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/layout.css">
-  <link rel="stylesheet" href="./css/components.css">
-  <script type="module" src="./js/components.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/favicon-arnika.svg" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <script type="module" src="./js/components.js"></script>
 
-  <style>
-    /* Service groups catalog */
-    .svc-catalog { padding: 72px 0; }
-    .svc-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
-    .svc-group {
-      background: var(--color-white);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .svc-group__img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      object-position: center;
-    }
-    .svc-group__body {
-      padding: 28px 32px 32px;
-      flex: 1;
-    }
-    .svc-group__num {
-      display: inline-block;
-      background: var(--color-primary);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 100px;
-      margin-bottom: 12px;
-    }
-    .svc-group__title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: 20px;
-      line-height: 1.3;
-    }
-    .svc-group__list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .svc-group__list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9375rem;
-      color: var(--color-text-muted);
-      line-height: 1.5;
-    }
-    .svc-group__list li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      margin-top: 1px;
-      background: rgba(0, 125, 73, 0.12);
-      border-radius: 50%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23007D49' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-      background-size: 13px;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .svc-group__list--desc li {
-      flex-direction: column;
-      gap: 4px;
-    }
-    .svc-group__list--desc li::before {
-      display: none;
-    }
-    .svc-group__list--desc li .svc-item-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      color: var(--color-text);
-      font-size: 0.9375rem;
-    }
-    .svc-group__list--desc li .svc-item-title::before {
-      content: '';
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      background: rgba(0, 125, 73, 0.12);
-      border-radius: 50%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23007D49' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-      background-size: 13px;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .svc-group__list--desc li .svc-item-desc {
-      padding-left: 28px;
-      font-size: 0.875rem;
-      color: var(--color-text-muted);
-    }
+    <style>
+      /* ── Shared section spacing ── */
+      .svc-section {
+        padding: 72px 0;
+      }
 
-    /* Prices section */
-    .prices-section { padding: 72px 0; background: var(--color-bg-soft); }
-    .prices-section .section__header { text-align: left; margin-bottom: 40px; }
-    .prices-section .section__header p { margin-left: 0; }
+      /* ── Section label ── */
+      .svc-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        margin-bottom: 10px;
+      }
+      .svc-label::before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--color-secondary);
+        border-radius: 2px;
+      }
+      .svc-section__header {
+        margin-bottom: 40px;
+      }
+      .svc-section__header h2 {
+        margin-top: 4px;
+      }
 
-    @media (max-width: 900px) {
-      .svc-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px) {
-      .svc-catalog { padding: 48px 0; }
-      .prices-section { padding: 48px 0; }
-      .svc-group__body { padding: 20px 20px 24px; }
-    }
-  </style>
-</head>
-<body>
+      /* ── DIAGNOSTICS: 4-column lists ── */
+      .diag-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+      .diag-col {
+        padding: 28px 24px 32px;
+        border-right: 1px solid var(--color-border);
+      }
+      .diag-col:last-child {
+        border-right: none;
+      }
+      .diag-col:nth-child(even) {
+        background: var(--color-bg-soft);
+      }
+      .diag-col__title {
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--color-secondary);
+      }
+      .diag-col__list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .diag-col__list li {
+        font-size: 0.9375rem;
+        color: var(--color-text);
+        line-height: 1.4;
+        padding-left: 14px;
+        position: relative;
+      }
+      .diag-col__list li::before {
+        content: "·";
+        position: absolute;
+        left: 0;
+        color: var(--color-secondary);
+        font-size: 1.25rem;
+        line-height: 1;
+        top: 1px;
+      }
 
-<!-- HEADER -->
-<app-header></app-header>
+      /* ── PROCEDURE / METHOD CARDS (3-per-row) ── */
+      .proc-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .proc-card {
+        background: var(--color-white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition);
+      }
+      .proc-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+      .proc-card__img {
+        width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        object-position: center;
+      }
+      .proc-card__body {
+        padding: 20px 20px 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .proc-card__title {
+        font-size: clamp(1.125rem, 2vw, 1.375rem);
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: 6px;
+        line-height: 1.3;
+      }
+      .proc-card__sub {
+        font-size: 0.9375rem;
+        color: var(--color-text-muted);
+        line-height: 1.5;
+        flex: 1;
+      }
+      .proc-card__arrow {
+        align-self: flex-end;
+        margin-top: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background var(--transition);
+      }
+      .proc-card:hover .proc-card__arrow {
+        background: var(--color-secondary);
+      }
+      .proc-card__arrow svg {
+        width: 18px;
+        height: 18px;
+        color: white;
+      }
 
-<main>
-  <!-- PAGE HERO -->
-  <section class="page-hero" aria-label="Послуги клініки">
-    <div class="container">
-      <h1>Послуги клініки</h1>
-      <p>Поєднуємо сучасні апаратні методики з доказовою медициною — для вашого одужання та профілактики</p>
-    </div>
-  </section>
+      /* ── Prices section ── */
+      .prices-section {
+        padding: 72px 0;
+        background: var(--color-bg-soft);
+      }
+      .prices-section .svc-section__header {
+        margin-bottom: 40px;
+      }
 
-  <!-- SERVICES CATALOG -->
-  <section class="svc-catalog" aria-labelledby="svc-catalog-heading">
-    <div class="container">
-      <div class="svc-grid">
+      /* ── Responsive ── */
+      @media (max-width: 1024px) {
+        .proc-card__title { font-size: 1.125rem; }
+        .proc-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .diag-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .diag-col:nth-child(2) {
+          border-right: none;
+        }
+        .diag-col:nth-child(1),
+        .diag-col:nth-child(2) {
+          border-bottom: 1px solid var(--color-border);
+        }
+      }
+      @media (max-width: 600px) {
+        .proc-card__title { font-size: 1rem; }
+        .proc-card__sub { font-size: 0.875rem; }
+        .svc-section {
+          padding: 48px 0;
+        }
+        .proc-grid {
+          grid-template-columns: 1fr;
+        }
+        .diag-grid {
+          grid-template-columns: 1fr;
+        }
+        .diag-col {
+          border-right: none;
+          border-bottom: 1px solid var(--color-border);
+        }
+        .diag-col:last-child {
+          border-bottom: none;
+        }
+        .prices-section {
+          padding: 48px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <app-header></app-header>
 
-        <!-- 1. Фізіотерапія та апаратні методи -->
-        <div class="svc-group">
-          <img
-            src="/img-arnika-04.webp"
-            alt="Фізіотерапія та апаратні методи — клініка Арніка"
-            class="svc-group__img"
-            loading="lazy"
+    <main>
+      <!-- PAGE HERO -->
+      <section class="page-hero" aria-label="Послуги клініки">
+        <div class="container">
+          <h1>Послуги клініки</h1>
+          <p>
+            Діагностика, лікувальні процедури та авторські методики — все в
+            одному місці
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. DIAGNOSTICS -->
+      <section class="svc-section" aria-labelledby="diag-heading">
+        <div class="container">
+          <div class="svc-section__header">
+            <div class="svc-label">Діагностика</div>
+            <h2 id="diag-heading">Обстеження та діагностика</h2>
+          </div>
+
+          <div class="diag-grid">
+            <!-- Col 1 -->
+            <div class="diag-col">
+              <div class="diag-col__title">Інструментальна</div>
+              <ul class="diag-col__list">
+                <li>ЕКГ</li>
+                <li>Холтер</li>
+                <li>ЕхоКГ</li>
+                <li>Енцефалографія</li>
+                <li>Нейроміографія</li>
+                <li>Голкова міографія</li>
+              </ul>
+            </div>
+            <!-- Col 2 -->
+            <div class="diag-col">
+              <div class="diag-col__title">Ультразвукова (УЗД)</div>
+              <ul class="diag-col__list">
+                <li>УЗД органів та систем</li>
+                <li>УЗД суглобів</li>
+                <li>УЗД серця</li>
+                <li>УЗД з доплером</li>
+              </ul>
+            </div>
+            <!-- Col 3 -->
+            <div class="diag-col">
+              <div class="diag-col__title">Судинна діагностика</div>
+              <ul class="diag-col__list">
+                <li>Доплер судин голови та шиї</li>
+                <li>Дуплексне сканування</li>
+                <li>Доплер судин нижніх кінцівок</li>
+              </ul>
+            </div>
+            <!-- Col 4 -->
+            <div class="diag-col">
+              <div class="diag-col__title">Ендоскопія та інш.</div>
+              <ul class="diag-col__list">
+                <li>ФГДС</li>
+                <li>Кольпоскопія</li>
+                <li>Дуоденальне зондування</li>
+                <li>Дихальний тест на H. pylori</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. PROCEDURES -->
+      <section class="svc-section section--alt" aria-labelledby="proc-heading">
+        <div class="container">
+          <div class="svc-section__header">
+            <div class="svc-label">Лікувальні процедури</div>
+            <h2 id="proc-heading">Процедури та лікування</h2>
+          </div>
+
+          <div class="proc-grid">
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-01.webp"
+                alt="Лазеротерапія"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Лазеротерапія</div>
+                <div class="proc-card__sub">
+                  Високоефективне безболісне лікування
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-02.webp"
+                alt="Озонотерапія"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Озонотерапія</div>
+                <div class="proc-card__sub">
+                  Детоксикація та лікування хронічних процесів
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-03.webp"
+                alt="Плазмотерапія"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Плазмотерапія</div>
+                <div class="proc-card__sub">
+                  Відновлення тканин та імунокорекція
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-04.webp"
+                alt="Лікування п'яткової шпори"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Лікування п'яткової шпори</div>
+                <div class="proc-card__sub">
+                  Швидке зняття болю та відновлення
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-05.webp"
+                alt="Інтаратон-4"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Інтаратон-4</div>
+                <div class="proc-card__sub">
+                  Лікування хронічних захворювань простати
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-06.webp"
+                alt="Гомеопатія"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Гомеопатія</div>
+                <div class="proc-card__sub">
+                  Натуральні методи підтримки здоров'я та відновлення
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. AUTHOR METHODS -->
+      <section class="svc-section" aria-labelledby="methods-heading">
+        <div class="container">
+          <div class="svc-section__header">
+            <div class="svc-label">Авторські методики</div>
+            <h2 id="methods-heading">Унікальні методики «Арніки»</h2>
+          </div>
+
+          <div class="proc-grid">
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-07.webp"
+                alt="Ехосинусоскопія"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Ехосинусоскопія</div>
+                <div class="proc-card__sub">
+                  Безпечна УЗД гайморових пазух без проколів та рентгену
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-04.webp"
+                alt="Детоксикація та імунокорекція"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">
+                  Детоксикація та імунокорекція
+                </div>
+                <div class="proc-card__sub">
+                  Озонотерапія, сорбційні технології, сучасні екологічні методи
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-07.webp"
+                alt="Розширена доплер-діагностика"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Розширена доплер-діагностика</div>
+                <div class="proc-card__sub">
+                  Комплексне дослідження судин голови, шиї та кінцівок
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-01.webp"
+                alt="Корекція фігури"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Корекція фігури</div>
+                <div class="proc-card__sub">
+                  Лікування целюліту, безопераційна підтяжка шкіри, омолодження
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-02.webp"
+                alt="HiTop-терапія"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">HiTop-терапія</div>
+                <div class="proc-card__sub">
+                  Високотонова терапія для м'язів та відновлення
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="proc-card">
+              <img
+                src="/img-arnika-03.webp"
+                alt="Пресотерапія"
+                class="proc-card__img"
+                loading="lazy"
+              />
+              <div class="proc-card__body">
+                <div class="proc-card__title">Пресотерапія</div>
+                <div class="proc-card__sub">
+                  Масажно-компресійне відновлення тіла
+                </div>
+                <div class="proc-card__arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICES -->
+      <section class="prices-section" aria-labelledby="prices-heading">
+        <div class="container">
+          <div class="svc-section__header">
+            <div class="svc-label">Прайс-лист</div>
+            <h2 id="prices-heading">Орієнтовні ціни на послуги</h2>
+            <p
+              style="
+                margin-top: 8px;
+                font-size: 1rem;
+                color: var(--color-text-muted);
+              "
+            >
+              Розгорніть потрібний розділ, щоб переглянути вартість прийому або
+              процедури
+            </p>
+          </div>
+
+          <!-- Терапія -->
+          <div class="service-cat" id="therapy">
+            <div
+              class="service-cat__header"
+              role="button"
+              aria-expanded="false"
+              tabindex="0"
+            >
+              <div class="service-cat__header-left">
+                <div class="service-cat__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"
+                    />
+                  </svg>
+                </div>
+                <span class="service-cat__title">Терапія</span>
+              </div>
+              <svg
+                class="service-cat__arrow"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="service-cat__body">
+              <ul class="service-cat__list">
+                <li class="service-cat__item">
+                  <span>Первинний огляд терапевта</span
+                  ><span class="service-cat__price">від 400 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Повторний огляд терапевта</span
+                  ><span class="service-cat__price">від 300 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>ЕКГ із розшифровкою</span
+                  ><span class="service-cat__price">від 250 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Вимірювання артеріального тиску</span
+                  ><span class="service-cat__price">безкоштовно</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Виписка рецептів та довідок</span
+                  ><span class="service-cat__price">від 100 грн</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Кардіологія -->
+          <div class="service-cat" id="cardiology">
+            <div
+              class="service-cat__header"
+              role="button"
+              aria-expanded="false"
+              tabindex="0"
+            >
+              <div class="service-cat__header-left">
+                <div class="service-cat__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    />
+                  </svg>
+                </div>
+                <span class="service-cat__title">Кардіологія</span>
+              </div>
+              <svg
+                class="service-cat__arrow"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="service-cat__body">
+              <ul class="service-cat__list">
+                <li class="service-cat__item">
+                  <span>Консультація кардіолога</span
+                  ><span class="service-cat__price">від 500 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>ЕКГ з навантаженням</span
+                  ><span class="service-cat__price">від 400 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Холтерівське моніторування ЕКГ (добове)</span
+                  ><span class="service-cat__price">від 700 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Добове моніторування АТ</span
+                  ><span class="service-cat__price">від 600 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>УЗД серця (ехокардіографія)</span
+                  ><span class="service-cat__price">від 600 грн</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Неврологія -->
+          <div class="service-cat" id="neurology">
+            <div
+              class="service-cat__header"
+              role="button"
+              aria-expanded="false"
+              tabindex="0"
+            >
+              <div class="service-cat__header-left">
+                <div class="service-cat__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2a9 9 0 00-9 9c0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11A9 9 0 0012 2zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                    />
+                  </svg>
+                </div>
+                <span class="service-cat__title">Неврологія</span>
+              </div>
+              <svg
+                class="service-cat__arrow"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="service-cat__body">
+              <ul class="service-cat__list">
+                <li class="service-cat__item">
+                  <span>Консультація невролога</span
+                  ><span class="service-cat__price">від 500 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Лікування болю в спині / остеохондроз</span
+                  ><span class="service-cat__price">від 400 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Рефлексотерапія (акупунктура)</span
+                  ><span class="service-cat__price">від 350 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Лікувальний масаж</span
+                  ><span class="service-cat__price">від 450 грн</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- УЗД Діагностика -->
+          <div class="service-cat" id="uzi">
+            <div
+              class="service-cat__header"
+              role="button"
+              aria-expanded="false"
+              tabindex="0"
+            >
+              <div class="service-cat__header-left">
+                <div class="service-cat__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19.5 12c0-1.23-.37-2.37-1-3.32V6c0-1.1-.9-2-2-2h-1.5C14.33 2.9 13.24 2 12 2s-2.33.9-2.5 2H8c-1.1 0-2 .9-2 2v2.68A5.5 5.5 0 0019.5 12zm-7.5 0a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM5.5 17.5C5.5 19.43 8.46 21 12 21s6.5-1.57 6.5-3.5V16c0-1.93-2.96-3.5-6.5-3.5S5.5 14.07 5.5 16v1.5z"
+                    />
+                  </svg>
+                </div>
+                <span class="service-cat__title">УЗД діагностика</span>
+              </div>
+              <svg
+                class="service-cat__arrow"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="service-cat__body">
+              <ul class="service-cat__list">
+                <li class="service-cat__item">
+                  <span>УЗД органів черевної порожнини</span
+                  ><span class="service-cat__price">від 450 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>УЗД нирок та сечового міхура</span
+                  ><span class="service-cat__price">від 350 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>УЗД щитоподібної залози</span
+                  ><span class="service-cat__price">від 350 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>УЗД серця (ехокардіографія)</span
+                  ><span class="service-cat__price">від 600 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>УЗД судин шиї та голови (УЗДГ)</span
+                  ><span class="service-cat__price">від 500 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>УЗД малого тазу</span
+                  ><span class="service-cat__price">від 350 грн</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Лабораторія -->
+          <div class="service-cat" id="lab">
+            <div
+              class="service-cat__header"
+              role="button"
+              aria-expanded="false"
+              tabindex="0"
+            >
+              <div class="service-cat__header-left">
+                <div class="service-cat__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M7 2v2h1v14c0 2.21 1.79 4 4 4s4-1.79 4-4V4h1V2H7zm4 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm2-4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm1-7H10V4h4v1z"
+                    />
+                  </svg>
+                </div>
+                <span class="service-cat__title">Лабораторія</span>
+              </div>
+              <svg
+                class="service-cat__arrow"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="service-cat__body">
+              <ul class="service-cat__list">
+                <li class="service-cat__item">
+                  <span>Загальний аналіз крові</span
+                  ><span class="service-cat__price">від 150 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Біохімічний аналіз крові</span
+                  ><span class="service-cat__price">від 300 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Аналіз сечі загальний</span
+                  ><span class="service-cat__price">від 120 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Гормони щитоподібної залози (ТТГ, Т3, Т4)</span
+                  ><span class="service-cat__price">від 400 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Коагулограма</span
+                  ><span class="service-cat__price">від 250 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Глюкоза крові</span
+                  ><span class="service-cat__price">від 80 грн</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Педіатрія -->
+          <div class="service-cat" id="pediatrics">
+            <div
+              class="service-cat__header"
+              role="button"
+              aria-expanded="false"
+              tabindex="0"
+            >
+              <div class="service-cat__header-left">
+                <div class="service-cat__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                    />
+                  </svg>
+                </div>
+                <span class="service-cat__title">Педіатрія</span>
+              </div>
+              <svg
+                class="service-cat__arrow"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="service-cat__body">
+              <ul class="service-cat__list">
+                <li class="service-cat__item">
+                  <span>Огляд педіатра</span
+                  ><span class="service-cat__price">від 400 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Профілактичний огляд дитини</span
+                  ><span class="service-cat__price">від 350 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Довідка для школи / дитсадка</span
+                  ><span class="service-cat__price">від 150 грн</span>
+                </li>
+                <li class="service-cat__item">
+                  <span>Довідка для басейну / спорту</span
+                  ><span class="service-cat__price">від 150 грн</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p
+            style="
+              margin-top: 24px;
+              font-size: 0.875rem;
+              color: var(--color-text-muted);
+            "
           >
-          <div class="svc-group__body">
-            <h3 class="svc-group__title">Фізіотерапія та апаратні методи</h3>
-            <ul class="svc-group__list svc-group__list--desc">
-              <li>
-                <span class="svc-item-title">Високотонова терапія (HiToP)</span>
-                <span class="svc-item-desc">Унікальний метод лікування хронічних болів, захворювань суглобів (артрози, болі в спині/плечах), головного болю. Стимулює власні ресурси організму на клітинному рівні.</span>
-              </li>
-              <li>
-                <span class="svc-item-title">Внутрішньовенне лазерне очищення крові (ВЛОК)</span>
-                <span class="svc-item-desc">Безпечне очищення крові, що прискорює одужання у 2–3 рази, збільшує ремісію та зменшує потребу в ліках. Тільки стерильні одноразові системи.</span>
-              </li>
-            </ul>
+            * Ціни вказані орієнтовно. Точну вартість уточнюйте у
+            реєстратурі.<br />
+            Діє пенсійна знижка та знижки для постійних пацієнтів.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section" aria-label="Запис на прийом">
+        <div class="container">
+          <h2>Потрібна консультація?</h2>
+          <p>Запишіться до потрібного спеціаліста — це зручно та швидко</p>
+          <div class="cta-buttons">
+            <a href="contacts.html#booking" class="btn btn--primary btn--lg"
+              >Записатись онлайн</a
+            >
+            <a href="tel:+380482700001" class="btn btn--white btn--lg"
+              >Зателефонувати</a
+            >
           </div>
         </div>
+      </section>
+    </main>
 
-        <!-- 2. Лікування болю та ОРА -->
-        <div class="svc-group">
-          <img
-            src="/img-arnika-05.webp"
-            alt="Лікування болю та захворювань суглобів — клініка Арніка"
-            class="svc-group__img"
-            loading="lazy"
-          >
-          <div class="svc-group__body">
-            <h3 class="svc-group__title">Лікування болю та захворювань опорно-рухового апарату</h3>
-            <ul class="svc-group__list">
-              <li>Лікування артрозів (колінного, кульшового суглобів)</li>
-              <li>Терапія болю в спині та міжхребцевих гриж</li>
-              <li>Лікування болю в плечі та шиї</li>
-              <li>Реабілітація після травм та операцій</li>
-            </ul>
-          </div>
-        </div>
+    <!-- FOOTER -->
+    <app-footer></app-footer>
 
-        <!-- 3. Терапія та профілактика -->
-        <div class="svc-group">
-          <img
-            src="/img-arnika-06.webp"
-            alt="Терапія та профілактика — клініка Арніка"
-            class="svc-group__img"
-            loading="lazy"
-          >
-          <div class="svc-group__body">
-            <h3 class="svc-group__title">Терапія та профілактика</h3>
-            <ul class="svc-group__list">
-              <li>Лікування хронічних захворювань</li>
-              <li>Терапія відкритих ран та виразок</li>
-              <li>Нормалізація артеріального тиску та серцевого ритму</li>
-              <li>Підвищення імунітету та стресостійкості</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 4. Діагностика -->
-        <div class="svc-group">
-          <img
-            src="/img-arnika-07.webp"
-            alt="Діагностика — клініка Арніка"
-            class="svc-group__img"
-            loading="lazy"
-          >
-          <div class="svc-group__body">
-            <h3 class="svc-group__title">Діагностика</h3>
-            <ul class="svc-group__list">
-              <li>УЗД органів черевної порожнини та нирок</li>
-              <li>УЗД серця (ехокардіографія)</li>
-              <li>УЗД судин шиї та голови (УЗДГ)</li>
-              <li>Лабораторні аналізи (кров, сеча, гормони)</li>
-              <li>ЕКГ та холтерівське моніторування</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICES -->
-  <section class="prices-section" aria-labelledby="prices-heading">
-    <div class="container">
-      <div class="section__header">
-        <h2 id="prices-heading">Орієнтовні ціни на послуги</h2>
-        <p>Розгорніть потрібний розділ, щоб переглянути вартість прийому або процедури</p>
-      </div>
-
-      <!-- Терапія -->
-      <div class="service-cat" id="therapy">
-        <div class="service-cat__header" role="button" aria-expanded="false" tabindex="0">
-          <div class="service-cat__header-left">
-            <div class="service-cat__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
-            </div>
-            <span class="service-cat__title">Терапія</span>
-          </div>
-          <svg class="service-cat__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="service-cat__body">
-          <ul class="service-cat__list">
-            <li class="service-cat__item"><span>Первинний огляд терапевта</span><span class="service-cat__price">від 400 грн</span></li>
-            <li class="service-cat__item"><span>Повторний огляд терапевта</span><span class="service-cat__price">від 300 грн</span></li>
-            <li class="service-cat__item"><span>ЕКГ із розшифровкою</span><span class="service-cat__price">від 250 грн</span></li>
-            <li class="service-cat__item"><span>Вимірювання артеріального тиску</span><span class="service-cat__price">безкоштовно</span></li>
-            <li class="service-cat__item"><span>Виписка рецептів та довідок</span><span class="service-cat__price">від 100 грн</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Кардіологія -->
-      <div class="service-cat" id="cardiology">
-        <div class="service-cat__header" role="button" aria-expanded="false" tabindex="0">
-          <div class="service-cat__header-left">
-            <div class="service-cat__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </div>
-            <span class="service-cat__title">Кардіологія</span>
-          </div>
-          <svg class="service-cat__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="service-cat__body">
-          <ul class="service-cat__list">
-            <li class="service-cat__item"><span>Консультація кардіолога</span><span class="service-cat__price">від 500 грн</span></li>
-            <li class="service-cat__item"><span>ЕКГ з навантаженням</span><span class="service-cat__price">від 400 грн</span></li>
-            <li class="service-cat__item"><span>Холтерівське моніторування ЕКГ (добове)</span><span class="service-cat__price">від 700 грн</span></li>
-            <li class="service-cat__item"><span>Добове моніторування АТ</span><span class="service-cat__price">від 600 грн</span></li>
-            <li class="service-cat__item"><span>УЗД серця (ехокардіографія)</span><span class="service-cat__price">від 600 грн</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Неврологія -->
-      <div class="service-cat" id="neurology">
-        <div class="service-cat__header" role="button" aria-expanded="false" tabindex="0">
-          <div class="service-cat__header-left">
-            <div class="service-cat__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a9 9 0 00-9 9c0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11A9 9 0 0012 2zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-            </div>
-            <span class="service-cat__title">Неврологія</span>
-          </div>
-          <svg class="service-cat__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="service-cat__body">
-          <ul class="service-cat__list">
-            <li class="service-cat__item"><span>Консультація невролога</span><span class="service-cat__price">від 500 грн</span></li>
-            <li class="service-cat__item"><span>Лікування болю в спині / остеохондроз</span><span class="service-cat__price">від 400 грн</span></li>
-            <li class="service-cat__item"><span>Рефлексотерапія (акупунктура)</span><span class="service-cat__price">від 350 грн</span></li>
-            <li class="service-cat__item"><span>Лікувальний масаж</span><span class="service-cat__price">від 450 грн</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- УЗД Діагностика -->
-      <div class="service-cat" id="uzi">
-        <div class="service-cat__header" role="button" aria-expanded="false" tabindex="0">
-          <div class="service-cat__header-left">
-            <div class="service-cat__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 12c0-1.23-.37-2.37-1-3.32V6c0-1.1-.9-2-2-2h-1.5C14.33 2.9 13.24 2 12 2s-2.33.9-2.5 2H8c-1.1 0-2 .9-2 2v2.68A5.5 5.5 0 0019.5 12zm-7.5 0a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM5.5 17.5C5.5 19.43 8.46 21 12 21s6.5-1.57 6.5-3.5V16c0-1.93-2.96-3.5-6.5-3.5S5.5 14.07 5.5 16v1.5z"/></svg>
-            </div>
-            <span class="service-cat__title">УЗД діагностика</span>
-          </div>
-          <svg class="service-cat__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="service-cat__body">
-          <ul class="service-cat__list">
-            <li class="service-cat__item"><span>УЗД органів черевної порожнини</span><span class="service-cat__price">від 450 грн</span></li>
-            <li class="service-cat__item"><span>УЗД нирок та сечового міхура</span><span class="service-cat__price">від 350 грн</span></li>
-            <li class="service-cat__item"><span>УЗД щитоподібної залози</span><span class="service-cat__price">від 350 грн</span></li>
-            <li class="service-cat__item"><span>УЗД серця (ехокардіографія)</span><span class="service-cat__price">від 600 грн</span></li>
-            <li class="service-cat__item"><span>УЗД судин шиї та голови (УЗДГ)</span><span class="service-cat__price">від 500 грн</span></li>
-            <li class="service-cat__item"><span>УЗД малого тазу</span><span class="service-cat__price">від 350 грн</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Лабораторія -->
-      <div class="service-cat" id="lab">
-        <div class="service-cat__header" role="button" aria-expanded="false" tabindex="0">
-          <div class="service-cat__header-left">
-            <div class="service-cat__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v2h1v14c0 2.21 1.79 4 4 4s4-1.79 4-4V4h1V2H7zm4 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm2-4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm1-7H10V4h4v1z"/></svg>
-            </div>
-            <span class="service-cat__title">Лабораторія</span>
-          </div>
-          <svg class="service-cat__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="service-cat__body">
-          <ul class="service-cat__list">
-            <li class="service-cat__item"><span>Загальний аналіз крові</span><span class="service-cat__price">від 150 грн</span></li>
-            <li class="service-cat__item"><span>Біохімічний аналіз крові</span><span class="service-cat__price">від 300 грн</span></li>
-            <li class="service-cat__item"><span>Аналіз сечі загальний</span><span class="service-cat__price">від 120 грн</span></li>
-            <li class="service-cat__item"><span>Гормони щитоподібної залози (ТТГ, Т3, Т4)</span><span class="service-cat__price">від 400 грн</span></li>
-            <li class="service-cat__item"><span>Коагулограма</span><span class="service-cat__price">від 250 грн</span></li>
-            <li class="service-cat__item"><span>Глюкоза крові</span><span class="service-cat__price">від 80 грн</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Педіатрія -->
-      <div class="service-cat" id="pediatrics">
-        <div class="service-cat__header" role="button" aria-expanded="false" tabindex="0">
-          <div class="service-cat__header-left">
-            <div class="service-cat__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-            </div>
-            <span class="service-cat__title">Педіатрія</span>
-          </div>
-          <svg class="service-cat__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="service-cat__body">
-          <ul class="service-cat__list">
-            <li class="service-cat__item"><span>Огляд педіатра</span><span class="service-cat__price">від 400 грн</span></li>
-            <li class="service-cat__item"><span>Профілактичний огляд дитини</span><span class="service-cat__price">від 350 грн</span></li>
-            <li class="service-cat__item"><span>Довідка для школи / дитсадка</span><span class="service-cat__price">від 150 грн</span></li>
-            <li class="service-cat__item"><span>Довідка для басейну / спорту</span><span class="service-cat__price">від 150 грн</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <p style="margin-top:24px;font-size:0.875rem;color:var(--color-text-muted)">
-        * Ціни вказані орієнтовно. Точну вартість уточнюйте у реєстратурі.<br>
-        Діє пенсійна знижка та знижки для постійних пацієнтів.
-      </p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" aria-label="Запис на прийом">
-    <div class="container">
-      <h2>Потрібна консультація?</h2>
-      <p>Запишіться до потрібного спеціаліста — це зручно та швидко</p>
-      <div class="cta-buttons">
-        <a href="contacts.html#booking" class="btn btn--primary btn--lg">Записатись онлайн</a>
-        <a href="tel:+380482700001" class="btn btn--white btn--lg">Зателефонувати</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<app-footer></app-footer>
-
-<script type="module" src="./js/main.js"></script>
-</body>
+    <script type="module" src="./js/main.js"></script>
+  </body>
 </html>
