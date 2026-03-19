@@ -86,7 +86,7 @@
     <style>
       /* Hero section */
       .hero {
-        min-height: 600px;
+        min-height: 520px;
         display: flex;
         align-items: center;
         background: linear-gradient(
@@ -95,7 +95,7 @@
           #e4f5ed 60%,
           #d5efe3 100%
         );
-        padding: 48px 0;
+        padding: 64px 0;
         overflow: hidden;
       }
       .hero__inner {
@@ -163,6 +163,7 @@
       .hero__img {
         width: 100%;
         aspect-ratio: 4/5;
+        max-height: 460px;
         object-fit: cover;
         object-position: center top;
         border-radius: var(--radius-xl);
@@ -200,38 +201,95 @@
         font-size: 0.8125rem;
         color: var(--color-text-muted);
       }
+      /* Tablet: 2 columns but compact */
       @media (max-width: 1024px) {
+        .hero {
+          padding: 32px 0;
+        }
+        .hero__inner {
+          gap: 36px;
+        }
+        .hero__title {
+          font-size: clamp(1.375rem, 3.5vw, 2rem);
+        }
+        .hero__subtitle {
+          font-size: 1rem;
+          margin-bottom: 28px;
+        }
+        .hero__actions .btn {
+          font-size: 1rem;
+          padding: 12px 22px;
+        }
+        .hero__badge {
+          padding: 4px 10px;
+          font-size: 0.8125rem;
+          margin-bottom: 16px;
+          margin-left: -2px;
+          margin-top: 6px;
+        }
+        .hero__img {
+          aspect-ratio: 4/5;
+          max-height: 400px;
+        }
+        .hero__img-badge {
+          left: -12px;
+          padding: 12px 14px;
+        }
+        .hero__img-badge-icon {
+          width: 36px;
+          height: 36px;
+        }
+        .hero__img-badge-num {
+          font-size: 1.25rem;
+        }
+      }
+      /* Mobile: 1 column, bigger photo */
+      @media (max-width: 768px) {
+        .hero {
+          padding: 32px 0;
+          min-height: auto;
+        }
         .hero__inner {
           grid-template-columns: 1fr;
-          gap: 40px;
+          gap: 28px;
         }
         .hero__img-wrap {
-          max-width: 520px;
+          max-width: 560px;
           margin: 0 auto;
         }
         .hero__img {
-          aspect-ratio: 5/4;
+          aspect-ratio: 4/3;
+          max-height: 420px;
         }
         .hero__img-badge {
           left: 16px;
+          bottom: -16px;
         }
       }
       @media (max-width: 600px) {
         .hero {
-          padding: 40px 0;
-          min-height: auto;
+          padding: 28px 0;
         }
         .hero__img-wrap {
           max-width: 100%;
         }
         .hero__img {
           aspect-ratio: 4/3;
+          max-height: 300px;
         }
         .hero__actions {
           flex-direction: column;
         }
         .hero__actions .btn {
           text-align: center;
+        }
+      }
+      @media (max-width: 400px) {
+        .hero {
+          padding: 28px 0;
+        }
+        .hero__img {
+          max-height: 240px;
         }
       }
 
@@ -276,29 +334,24 @@
                     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"
                   />
                 </svg>
-                Точна діагностика. Обґрунтоване лікування.
+                Власні методики
               </div>
               <h1 class="hero__title">
-                <span>Турбота,</span><br />перевірена<br />часом
+                <span>Турбота,</span><br />перевірена часом
               </h1>
               <p class="hero__subtitle">
-                Сімейний медичний центр в Одесі. Лікарі вищої категорії, сучасна
-                діагностика та щирий підхід до кожного пацієнта.
+                У здорової людини — безліч бажань. «Арника» має одне: повернути
+                вам здоров’я. Поєднуємо доказову медицину з глибоким розумінням
+                організму. Лікуємо не хворобу, а людину.
               </p>
               <div class="hero__actions">
                 <a href="contacts.html#booking" class="btn btn--primary btn--lg"
                   >Записатись на прийом</a
                 >
-                <a href="services.html" class="btn btn--outline btn--lg"
-                  >Всі послуги</a
-                >
               </div>
               <div class="hero__trust">
                 <div class="hero__trust-icon">✓</div>
-                <span
-                  >Реєстраційний номер 4355 — офіційна клініка вищої
-                  категорії</span
-                >
+                <span>Реєстрація №4355 — клініка вищої категорії</span>
               </div>
             </div>
             <div class="hero__img-wrap">
@@ -334,26 +387,77 @@
         </div>
       </section>
 
-      <!-- STATS BAR -->
-      <section class="stats-bar" aria-label="Цифри та досягнення">
+      <!-- МЕТОДИКИ -->
+      <section class="methods-section" aria-labelledby="methods-heading">
         <div class="container">
-          <div class="stats-bar__grid">
-            <div class="stat-item">
-              <div class="stat-item__num">20+</div>
-              <div class="stat-item__label">років на ринку</div>
+          <div class="section__header">
+            <h2 id="methods-heading">Унікальні методики лікування</h2>
+            <p>Технології, яких немає в більшості клінік регіону</p>
+          </div>
+          <div class="methods-grid">
+            <div class="method-card">
+              <div class="method-card__icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 2v11h3v9l7-12h-4l4-8z" />
+                </svg>
+              </div>
+              <div class="method-card__title">Високотонова терапія (HiToP)</div>
+              <p class="method-card__desc">
+                Безболісне лікування хронічного болю. Вплив високими частотами
+                активує власні ресурси організму. Допомагає при артрозах, болях
+                у спині та суглобах.
+              </p>
             </div>
-            <div class="stat-item">
-              <div class="stat-item__num">4+</div>
-              <div class="stat-item__label">власних методики</div>
+            <div class="method-card">
+              <div class="method-card__icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.58 8.2 8 8.2s8-3.22 8-8.2C20 10.48 17.33 6.55 12 2z"
+                  />
+                </svg>
+              </div>
+              <div class="method-card__title">
+                Лазерне очищення крові (ВЛОК)
+              </div>
+              <p class="method-card__desc">
+                Прискорює одужання в 2–3 рази. Безпечне внутрішньовенне
+                очищення, яке зміцнює імунітет і зменшує потребу в ліках.
+                Ефективно при алергії та хронічних хворобах.
+              </p>
             </div>
-            <div class="stat-item">
-              <div class="stat-item__num">10+</div>
-              <div class="stat-item__label">напрямків</div>
+            <div class="method-card">
+              <div class="method-card__icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 8C8 10 5.9 16.17 3.82 19.5c1.91.56 3.83.5 5.89-.72C10.56 17.83 11.56 17 12 17c1 0 3 1 5 1 3 0 4-2 4-4.5 0-3.5-1.5-5.5-4-5.5z"
+                  />
+                </svg>
+              </div>
+              <div class="method-card__title">Озонотерапія</div>
+              <p class="method-card__desc">
+                Зцілення киснем. Потужний засіб для зняття запалень, боротьби з
+                алергенами та загального оздоровлення організму.
+              </p>
             </div>
-            <div class="stat-item">
-              <div class="stat-item__num">5000+</div>
-              <div class="stat-item__label">пацієнтів на рік</div>
+            <div class="method-card">
+              <div class="method-card__icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5z"
+                  />
+                </svg>
+              </div>
+              <div class="method-card__title">Діагностика алергій</div>
+              <p class="method-card__desc">
+                Шукаємо першопричину. Точне визначення алергенів дозволяє
+                лікувати не симптоми, а джерело проблеми.
+              </p>
             </div>
+          </div>
+          <div class="methods-cta">
+            <a href="services.html" class="btn btn--white btn--lg"
+              >Усі послуги центру →</a
+            >
           </div>
         </div>
       </section>
@@ -368,42 +472,120 @@
               одужання
             </p>
           </div>
-          <div class="grid-4">
-            <div class="feature-card">
-              <div class="feature-card__icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
+          <div class="why-us-inner">
+            <div class="why-us-features">
+              <div class="feature-item">
+                <div class="feature-item__icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="feature-item__title">Досвідчені лікарі</div>
+                  <div class="feature-item__desc">
+                    Лікарі вищої категорії, кандидати та доктори наук.
+                  </div>
+                </div>
               </div>
-              <h3 class="feature-card__title">Досвідчені лікарі</h3>
-              <p class="feature-card__desc">Лікарі вищої категорії, кандидати та доктори наук</p>
+              <div class="feature-item">
+                <div class="feature-item__icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M7 2v11h3v9l7-12h-4l4-8z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="feature-item__title">Унікальні методики</div>
+                  <div class="feature-item__desc">
+                    Власні запатентовані підходи, озоно- та лазеролікування,
+                    східні методи (Су Джок, Шубоши).
+                  </div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item__icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="feature-item__title">Сучасна діагностика</div>
+                  <div class="feature-item__desc">
+                    Точні обстеження, визначення спектра алергенів — без зайвих
+                    призначень.
+                  </div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item__icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="feature-item__title">Затишна обстановка</div>
+                  <div class="feature-item__desc">
+                    Світлі, затишні кабінети, які не нагадують лікарню. Усе, щоб
+                    ви почувались спокійно.
+                  </div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item__icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="feature-item__title">Доступні ціни</div>
+                  <div class="feature-item__desc">
+                    Вартість розрахована на пацієнтів із різним рівнем доходу.
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="feature-card">
-              <div class="feature-card__icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                </svg>
+            <div>
+              <div class="clinic-slider" id="clinicSlider">
+                <div class="clinic-slider__track">
+                  <div class="clinic-slider__slide">
+                    <img src="/img-arnika-01.webp" alt="Клініка Арніка" />
+                  </div>
+                  <div class="clinic-slider__slide">
+                    <img src="/img-arnika-02.webp" alt="Клініка Арніка" />
+                  </div>
+                  <div class="clinic-slider__slide">
+                    <img src="/img-arnika-03.webp" alt="Клініка Арніка" />
+                  </div>
+                </div>
+                <button
+                  class="clinic-slider__btn clinic-slider__btn--prev"
+                  aria-label="Назад"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                  </svg>
+                </button>
+                <button
+                  class="clinic-slider__btn clinic-slider__btn--next"
+                  aria-label="Вперед"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                  </svg>
+                </button>
               </div>
-              <h3 class="feature-card__title">Сучасна діагностика</h3>
-              <p class="feature-card__desc">Точні обстеження без зайвих призначень</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
+              <div class="clinic-slider__dots">
+                <button class="clinic-slider__dot" aria-label="Фото 1"></button>
+                <button class="clinic-slider__dot" aria-label="Фото 2"></button>
+                <button class="clinic-slider__dot" aria-label="Фото 3"></button>
               </div>
-              <h3 class="feature-card__title">Комплексний підхід</h3>
-              <p class="feature-card__desc">Виявляємо причину, а не лише симптоми</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-              </div>
-              <h3 class="feature-card__title">Турбота про пацієнта</h3>
-              <p class="feature-card__desc">Уважне ставлення та зрозумілі рекомендації</p>
             </div>
           </div>
         </div>
@@ -416,10 +598,9 @@
             <h2 id="doctors-preview-heading">Наші лікарі</h2>
             <p>
               Команда досвідчених спеціалістів, яким довіряють тисячі пацієнтів
-              Одеси
             </p>
           </div>
-          <div class="grid-3">
+          <div class="grid-4">
             <div class="doctor-card">
               <div class="doctor-card__avatar">
                 <img
@@ -480,6 +661,26 @@
                 >Детальніше</a
               >
             </div>
+            <div class="doctor-card">
+              <div class="doctor-card__avatar">
+                <img
+                  src="/doctor.svg"
+                  alt="Хохлов Сергій Борисович"
+                  width="88"
+                  height="88"
+                />
+              </div>
+              <div class="doctor-card__name">Хохлов Сергій Борисович</div>
+              <div class="doctor-card__spec">Уролог</div>
+              <div class="doctor-card__cat">
+                Канд. мед. наук · 32 р. досвіду
+              </div>
+              <a
+                href="doctors/hokhlov.html"
+                class="btn btn--outline btn--sm doctor-card__btn"
+                >Детальніше</a
+              >
+            </div>
           </div>
           <div style="text-align: center; margin-top: 40px">
             <a href="doctors.html" class="btn btn--outline btn--lg"
@@ -496,47 +697,154 @@
             <h2 id="reviews-heading">Що кажуть пацієнти</h2>
             <p>Реальні відгуки від наших пацієнтів</p>
           </div>
-          <div class="grid-3">
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-card__text">
-                «Клініка просто чудова! Лікарі уважні, обладнання сучасне.
-                Завжди рекомендую своїм близьким. Записуватись зручно, черг
-                немає.»
-              </p>
-              <div class="review-card__author">
-                <div class="review-card__avatar">О</div>
-                <div>
-                  <div class="review-card__name">Ольга Мельник</div>
-                  <div class="review-card__date">Пацієнт клініки</div>
+          <div class="reviews-carousel" id="reviewsCarousel">
+            <div class="reviews-carousel__track">
+              <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-card__text">
+                  «Клініка просто чудова! Лікарі уважні, обладнання сучасне.
+                  Завжди рекомендую своїм близьким. Записуватись зручно, черг
+                  немає.»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">О</div>
+                  <div>
+                    <div class="review-card__name">Ольга Мельник</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-card__text">
-                «Дуже вдячна лікарям Арніки. Нарешті знайшла клініку, де
-                ставляться до тебе по-людськи. Обслуговування на вищому рівні.»
-              </p>
-              <div class="review-card__author">
-                <div class="review-card__avatar">Н</div>
-                <div>
-                  <div class="review-card__name">Наталія Бондаренко</div>
-                  <div class="review-card__date">Пацієнт клініки</div>
+              <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-card__text">
+                  «Дуже вдячна лікарям Арніки. Нарешті знайшла клініку, де
+                  ставляться до тебе по-людськи. Обслуговування на вищому
+                  рівні.»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">Н</div>
+                  <div>
+                    <div class="review-card__name">Наталія Бондаренко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-card__text">
-                «Ходжу сюди вже 5 років. Зручне розташування, кваліфіковані
-                лікарі, приємна атмосфера. Дякую всьому колективу!»
-              </p>
-              <div class="review-card__author">
-                <div class="review-card__avatar">В</div>
-                <div>
-                  <div class="review-card__name">Василь Сидоренко</div>
-                  <div class="review-card__date">Пацієнт клініки</div>
+              <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-card__text">
+                  «Ходжу сюди вже 5 років. Зручне розташування, кваліфіковані
+                  лікарі, приємна атмосфера. Дякую всьому колективу!»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">В</div>
+                  <div>
+                    <div class="review-card__name">Василь Сидоренко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-card__text">
+                  «Після курсу озонотерапії відчула неймовірне покращення.
+                  Алергія, яка мучила роками, значно зменшилась. Дуже вдячна!»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">І</div>
+                  <div>
+                    <div class="review-card__name">Ірина Коваленко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-card__text">
+                  «HiToP-терапія допомогла позбутись болів у спині, з якими я
+                  жив роками. Лікарі пояснили все детально. Рекомендую від усієї
+                  душі.»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">М</div>
+                  <div>
+                    <div class="review-card__name">Микола Петренко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-card__text">
+                  «Звернулась з хронічним захворюванням — лікарі знайшли причину
+                  там, де інші не бачили. Підхід справді комплексний. Щиро
+                  дякую!»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">Т</div>
+                  <div>
+                    <div class="review-card__name">Тетяна Руденко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-card__text">
+                  «Дитина страждала від алергії. Після діагностики та лікування
+                  в Арніці стало набагато краще. Нарешті знайшли алерген і
+                  лікують причину.»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">Л</div>
+                  <div>
+                    <div class="review-card__name">Людмила Захаренко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-card__text">
+                  «Зробив ВЛОК — одужав майже вдвічі швидше, ніж зазвичай.
+                  Персонал уважний, процедура безболісна. Тепер рекомендую всім
+                  друзям.»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">А</div>
+                  <div>
+                    <div class="review-card__name">Андрій Шевченко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-card__text">
+                  «Чудові лікарі, затишна атмосфера. Приємно, коли до тебе
+                  ставляться уважно і пояснюють кожен крок лікування. Клініка
+                  вищого рівня.»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">С</div>
+                  <div>
+                    <div class="review-card__name">Світлана Гнатенко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-card__text">
+                  «Лікуюсь у клініці вже понад 10 років. Змінювались лікарі —
+                  залишалась якість. Арніка — це місце, якому я довіряю своє
+                  здоров'я.»
+                </p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">Г</div>
+                  <div>
+                    <div class="review-card__name">Григорій Лисенко</div>
+                    <div class="review-card__date">Пацієнт клініки</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -547,8 +855,11 @@
       <!-- CTA -->
       <section class="cta-section" aria-label="Запис на прийом">
         <div class="container">
-          <h2>Готові прийти до нас?</h2>
-          <p>Запишіться онлайн або зателефонуйте — ми підберемо зручний час</p>
+          <h2>Ваше здоров'я — наша справа.</h2>
+          <p>
+            Запишіться онлайн або зателефонуйте — ми підберемо зручний для вас
+            час
+          </p>
           <div class="cta-buttons">
             <a href="contacts.html#booking" class="btn btn--primary btn--lg"
               >Записатись онлайн</a
@@ -565,5 +876,82 @@
     <app-footer></app-footer>
 
     <script type="module" src="./js/main.js"></script>
+    <script>
+      // Reviews carousel — 2 per view, auto-advances every 7s
+      (function () {
+        var wrap = document.getElementById("reviewsCarousel");
+        var track = wrap.querySelector(".reviews-carousel__track");
+        var cards = track.querySelectorAll(".review-card");
+        var gap = 24,
+          current = 0,
+          perView = 2,
+          cardW = 0;
+
+        function init() {
+          perView = window.innerWidth <= 600 ? 1 : 2;
+          wrap.style.setProperty("--rcw", wrap.clientWidth + "px");
+          // cardW after CSS applies: (containerW - gap) / 2, capped at 500
+          cardW = Math.min(
+            500,
+            Math.floor((wrap.clientWidth - gap * (perView - 1)) / perView),
+          );
+          goTo(0);
+        }
+
+        function goTo(i) {
+          var max = cards.length - perView;
+          current = i > max ? 0 : i < 0 ? max : i;
+          track.style.transform =
+            "translateX(-" + current * (cardW + gap) + "px)";
+        }
+
+        var timer = setInterval(function () {
+          goTo(current + 1);
+        }, 5000);
+        wrap.addEventListener("mouseenter", function () {
+          clearInterval(timer);
+        });
+        wrap.addEventListener("mouseleave", function () {
+          timer = setInterval(function () {
+            goTo(current + 1);
+          }, 5000);
+        });
+        window.addEventListener("resize", init);
+        window.addEventListener("load", init);
+      })();
+
+      // Clinic photo slider
+      (function () {
+        var track = document.querySelector(
+          "#clinicSlider .clinic-slider__track",
+        );
+        var dots = document.querySelectorAll(".clinic-slider__dot");
+        var total = 3,
+          current = 0;
+        function goTo(i) {
+          current = (i + total) % total;
+          track.style.transform = "translateX(-" + current * 100 + "%)";
+          dots.forEach(function (d, idx) {
+            d.classList.toggle("clinic-slider__dot--active", idx === current);
+          });
+        }
+        document
+          .querySelector(".clinic-slider__btn--prev")
+          .addEventListener("click", function () {
+            goTo(current - 1);
+          });
+        document
+          .querySelector(".clinic-slider__btn--next")
+          .addEventListener("click", function () {
+            goTo(current + 1);
+          });
+        dots.forEach(function (d, i) {
+          d.addEventListener("click", function () {
+            goTo(i);
+          });
+        });
+        goTo(0);
+      })();
+    </script>
   </body>
 </html>

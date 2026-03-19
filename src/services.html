@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Послуги — Арніка Медичний Центр | Одеса</title>
-  <meta name="description" content="Медичні послуги клініки Арніка в Одесі: терапія, кардіологія, неврологія, УЗД-діагностика, лабораторія, педіатрія. Вул. Успенська, 59.">
+  <meta name="description" content="Медичні послуги клініки Арніка в Одесі: фізіотерапія, HiToP, лікування болю, терапія, діагностика. Вул. Успенська, 59.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://arnika.od.ua/services.html">
 
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Послуги — Арніка Медичний Центр">
-  <meta property="og:description" content="Широкий спектр медичних послуг: терапія, кардіологія, неврологія, УЗД, лабораторія. Одеса, Успенська 59.">
+  <meta property="og:description" content="Широкий спектр медичних послуг: фізіотерапія, лікування болю, терапія, діагностика. Одеса, Успенська 59.">
   <meta property="og:url"         content="https://arnika.od.ua/services.html">
 
   <link rel="icon" type="image/svg+xml" href="/favicon-arnika.svg">
@@ -18,6 +18,125 @@
   <link rel="stylesheet" href="./css/layout.css">
   <link rel="stylesheet" href="./css/components.css">
   <script type="module" src="./js/components.js"></script>
+
+  <style>
+    /* Service groups catalog */
+    .svc-catalog { padding: 72px 0; }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .svc-group {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .svc-group__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: center;
+    }
+    .svc-group__body {
+      padding: 28px 32px 32px;
+      flex: 1;
+    }
+    .svc-group__num {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    .svc-group__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .svc-group__list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .svc-group__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+    .svc-group__list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      background: rgba(0, 125, 73, 0.12);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23007D49' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 13px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .svc-group__list--desc li {
+      flex-direction: column;
+      gap: 4px;
+    }
+    .svc-group__list--desc li::before {
+      display: none;
+    }
+    .svc-group__list--desc li .svc-item-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--color-text);
+      font-size: 0.9375rem;
+    }
+    .svc-group__list--desc li .svc-item-title::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: rgba(0, 125, 73, 0.12);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23007D49' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 13px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .svc-group__list--desc li .svc-item-desc {
+      padding-left: 28px;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Prices section */
+    .prices-section { padding: 72px 0; background: var(--color-bg-soft); }
+    .prices-section .section__header { text-align: left; margin-bottom: 40px; }
+    .prices-section .section__header p { margin-left: 0; }
+
+    @media (max-width: 900px) {
+      .svc-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .svc-catalog { padding: 48px 0; }
+      .prices-section { padding: 48px 0; }
+      .svc-group__body { padding: 20px 20px 24px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -29,14 +148,107 @@
   <section class="page-hero" aria-label="Послуги клініки">
     <div class="container">
       <h1>Послуги клініки</h1>
-      <p>Широкий спектр медичних послуг — від первинної консультації до розгорнутої діагностики</p>
+      <p>Поєднуємо сучасні апаратні методики з доказовою медициною — для вашого одужання та профілактики</p>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section" aria-labelledby="services-heading">
+  <!-- SERVICES CATALOG -->
+  <section class="svc-catalog" aria-labelledby="svc-catalog-heading">
     <div class="container">
-      <h2 id="services-heading" class="visually-hidden">Напрямки та послуги</h2>
+      <div class="svc-grid">
+
+        <!-- 1. Фізіотерапія та апаратні методи -->
+        <div class="svc-group">
+          <img
+            src="/img-arnika-04.webp"
+            alt="Фізіотерапія та апаратні методи — клініка Арніка"
+            class="svc-group__img"
+            loading="lazy"
+          >
+          <div class="svc-group__body">
+            <h3 class="svc-group__title">Фізіотерапія та апаратні методи</h3>
+            <ul class="svc-group__list svc-group__list--desc">
+              <li>
+                <span class="svc-item-title">Високотонова терапія (HiToP)</span>
+                <span class="svc-item-desc">Унікальний метод лікування хронічних болів, захворювань суглобів (артрози, болі в спині/плечах), головного болю. Стимулює власні ресурси організму на клітинному рівні.</span>
+              </li>
+              <li>
+                <span class="svc-item-title">Внутрішньовенне лазерне очищення крові (ВЛОК)</span>
+                <span class="svc-item-desc">Безпечне очищення крові, що прискорює одужання у 2–3 рази, збільшує ремісію та зменшує потребу в ліках. Тільки стерильні одноразові системи.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Лікування болю та ОРА -->
+        <div class="svc-group">
+          <img
+            src="/img-arnika-05.webp"
+            alt="Лікування болю та захворювань суглобів — клініка Арніка"
+            class="svc-group__img"
+            loading="lazy"
+          >
+          <div class="svc-group__body">
+            <h3 class="svc-group__title">Лікування болю та захворювань опорно-рухового апарату</h3>
+            <ul class="svc-group__list">
+              <li>Лікування артрозів (колінного, кульшового суглобів)</li>
+              <li>Терапія болю в спині та міжхребцевих гриж</li>
+              <li>Лікування болю в плечі та шиї</li>
+              <li>Реабілітація після травм та операцій</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. Терапія та профілактика -->
+        <div class="svc-group">
+          <img
+            src="/img-arnika-06.webp"
+            alt="Терапія та профілактика — клініка Арніка"
+            class="svc-group__img"
+            loading="lazy"
+          >
+          <div class="svc-group__body">
+            <h3 class="svc-group__title">Терапія та профілактика</h3>
+            <ul class="svc-group__list">
+              <li>Лікування хронічних захворювань</li>
+              <li>Терапія відкритих ран та виразок</li>
+              <li>Нормалізація артеріального тиску та серцевого ритму</li>
+              <li>Підвищення імунітету та стресостійкості</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. Діагностика -->
+        <div class="svc-group">
+          <img
+            src="/img-arnika-07.webp"
+            alt="Діагностика — клініка Арніка"
+            class="svc-group__img"
+            loading="lazy"
+          >
+          <div class="svc-group__body">
+            <h3 class="svc-group__title">Діагностика</h3>
+            <ul class="svc-group__list">
+              <li>УЗД органів черевної порожнини та нирок</li>
+              <li>УЗД серця (ехокардіографія)</li>
+              <li>УЗД судин шиї та голови (УЗДГ)</li>
+              <li>Лабораторні аналізи (кров, сеча, гормони)</li>
+              <li>ЕКГ та холтерівське моніторування</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="prices-section" aria-labelledby="prices-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 id="prices-heading">Орієнтовні ціни на послуги</h2>
+        <p>Розгорніть потрібний розділ, щоб переглянути вартість прийому або процедури</p>
+      </div>
 
       <!-- Терапія -->
       <div class="service-cat" id="therapy">
@@ -170,7 +382,7 @@
         </div>
       </div>
 
-      <p style="margin-top:24px;font-size:0.875rem;color:var(--color-text-muted);text-align:center">
+      <p style="margin-top:24px;font-size:0.875rem;color:var(--color-text-muted)">
         * Ціни вказані орієнтовно. Точну вартість уточнюйте у реєстратурі.<br>
         Діє пенсійна знижка та знижки для постійних пацієнтів.
       </p>

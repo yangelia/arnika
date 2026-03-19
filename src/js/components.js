@@ -4,18 +4,21 @@ class AppHeader extends HTMLElement {
     const active = this._detectPage();
 
     const links = [
-      { href: '/index.html',    id: 'index',    label: 'Головна'  },
-      { href: '/services.html', id: 'services', label: 'Послуги'  },
-      { href: '/doctors.html',  id: 'doctors',  label: 'Лікарі'   },
-      { href: '/about.html',    id: 'about',    label: 'Про нас'  },
-      { href: '/contacts.html', id: 'contacts', label: 'Контакти' },
+      { href: "/index.html", id: "index", label: "Головна" },
+      { href: "/services.html", id: "services", label: "Послуги" },
+      { href: "/doctors.html", id: "doctors", label: "Лікарі" },
+      { href: "/about.html", id: "about", label: "Про нас" },
+      { href: "/contacts.html", id: "contacts", label: "Контакти" },
     ];
 
     const navItems = links
-      .map(l => `<a href="${l.href}" class="nav__link${active === l.id ? ' nav__link--active' : ''}">${l.label}</a>`)
-      .join('\n        ');
+      .map(
+        (l) =>
+          `<a href="${l.href}" class="nav__link${active === l.id ? " nav__link--active" : ""}">${l.label}</a>`,
+      )
+      .join("\n        ");
 
-    const tpl = document.createElement('template');
+    const tpl = document.createElement("template");
     tpl.innerHTML = `
 <header class="header">
   <div class="container">
@@ -52,36 +55,36 @@ class AppHeader extends HTMLElement {
 
   _detectPage() {
     const path = location.pathname;
-    if (path.includes('/doctors/')) return 'doctors';
-    const name = path.split('/').pop().replace('.html', '');
-    return name || 'index';
+    if (path.includes("/doctors/")) return "doctors";
+    const name = path.split("/").pop().replace(".html", "");
+    return name || "index";
   }
 
   _initMenu(header) {
-    const burger = header.querySelector('.burger');
-    const nav    = header.querySelector('.header__nav');
+    const burger = header.querySelector(".burger");
+    const nav = header.querySelector(".header__nav");
     if (!burger || !nav) return;
 
     // Inject "Записатись" into mobile nav
-    const cta = header.querySelector('.header__cta');
+    const cta = header.querySelector(".header__cta");
     if (cta) {
       const clone = cta.cloneNode(true);
-      clone.classList.remove('btn--sm', 'header__cta');
-      clone.classList.add('btn--lg', 'nav__cta-clone');
+      clone.classList.remove("btn--sm", "header__cta");
+      clone.classList.add("btn--lg", "nav__cta-clone");
       nav.appendChild(clone);
     }
 
-    burger.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', String(isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+    burger.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", String(isOpen));
+      document.body.style.overflow = isOpen ? "hidden" : "";
     });
 
-    nav.querySelectorAll('.nav__link, a.btn').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+    nav.querySelectorAll(".nav__link, a.btn").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("is-open");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
       });
     });
   }
@@ -90,14 +93,14 @@ class AppHeader extends HTMLElement {
 // === APP FOOTER ===
 class AppFooter extends HTMLElement {
   connectedCallback() {
-    const tpl = document.createElement('template');
+    const tpl = document.createElement("template");
     tpl.innerHTML = `
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div>
-        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" class="footer__logo" width="52" height="47">
-        <p class="footer__tagline">Сімейний медичний центр у Одесі.<br>Турбота про здоров'я з 2003 року.</p>
+        <img src="/logo-arnika.svg" alt="Арніка Медичний Центр" class="footer__logo" width="80" height="72">
+        <p class="footer__tagline">Багатопрофільний <br>медичний центр в Одесі <br> вулиця Успенська, 59</p>
       </div>
       <div>
         <p class="footer__heading">Навігація</p>
@@ -125,7 +128,7 @@ class AppFooter extends HTMLElement {
       </div>
     </div>
     <div class="footer__bottom">
-      <span class="footer__copy">© 2025 Арніка Медичний Центр. Всі права захищені.</span>
+      <span class="footer__copy">© 2026 Арніка Медичний Центр. Всі права захищені.</span>
       <span class="footer__copy">Реєстраційний номер: 4355 від 2003 р.</span>
     </div>
   </div>
@@ -137,5 +140,5 @@ class AppFooter extends HTMLElement {
   }
 }
 
-customElements.define('app-header', AppHeader);
-customElements.define('app-footer', AppFooter);
+customElements.define("app-header", AppHeader);
+customElements.define("app-footer", AppFooter);
