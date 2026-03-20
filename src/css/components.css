@@ -37,7 +37,7 @@
   box-shadow: var(--shadow);
 }
 .btn--white:hover {
-  background: #f0f0f0;
+  background: #d4f0e3;
   transform: translateY(-1px);
 }
 .btn--ghost {
@@ -52,6 +52,7 @@
 
 /* === DOCTOR CARD === */
 .doctor-card {
+  position: relative;
   background: var(--color-bg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
@@ -86,18 +87,17 @@
   color: var(--color-text);
 }
 .doctor-card__spec {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--color-primary);
   font-weight: 600;
 }
 .doctor-card__cat {
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--color-text-muted);
   background: var(--color-bg-soft);
   padding: 4px 12px;
   border-radius: 100px;
 }
-.doctor-card__btn { margin-top: 8px; width: 100%; }
 
 /* === FEATURE CARD (Чому ми) === */
 .feature-card {
@@ -191,17 +191,17 @@
   margin-bottom: 40px;
 }
 .filter-tab {
-  padding: 8px 20px;
+  padding: 5px 20px;
   border-radius: 100px;
-  font-size: 0.9375rem;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 400;
   color: var(--color-text-muted);
   background: var(--color-bg-soft);
-  border: 1.5px solid var(--color-border);
+  border: none;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
-.filter-tab:hover { color: var(--color-primary); border-color: var(--color-primary); background: rgba(0,125,73,0.06); }
+.filter-tab:hover { background: #d4f0e3; color: var(--color-primary); }
 .filter-tab--active {
   background: var(--color-primary);
   color: var(--color-white);
@@ -245,13 +245,19 @@
 
 /* === PAGE HERO === */
 .page-hero {
-  background: linear-gradient(135deg, #f0faf5 0%, #e8f7ef 100%);
-  padding: 64px 0 56px;
+  background: var(--color-primary) url('/lines.svg') no-repeat bottom center;
+  background-size: 100% auto;
+  padding: 64px 0 72px;
   text-align: center;
 }
-.page-hero h1 { color: var(--color-text); margin-bottom: 12px; }
-.page-hero p { font-size: 1.125rem; max-width: 560px; margin: 0 auto; }
+.page-hero h1 { color: #ffffff; margin-bottom: 12px; }
+.page-hero p { font-size: 1.125rem; max-width: 560px; margin: 0 auto; color: rgba(255,255,255,0.8); }
 @media (max-width: 1024px) { .page-hero p { font-size: 0.9375rem; } }
+@media (max-width: 1024px) and (min-width: 601px) { .page-hero { padding: 40px 0; } }
+@media (max-width: 600px) {
+  .page-hero { background-size: 150% auto; padding: 36px 0; }
+  .methods-section { background-size: 150% auto, auto; }
+}
 
 /* === REVIEW CARD === */
 .review-card {
@@ -304,8 +310,9 @@
 
 /* === METHOD CARDS === */
 .methods-section {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #004d2b 100%);
-  padding: 64px 0;
+  background: url('/lines.svg') no-repeat bottom center, linear-gradient(135deg, var(--color-primary) 0%, #004d2b 100%);
+  background-size: 100% auto, auto;
+  padding: 64px 0 72px;
 }
 .methods-section .section__header h2 { color: #fff; }
 .methods-section .section__header p { color: rgba(255,255,255,0.75); }
@@ -557,14 +564,39 @@
   border-color: var(--color-primary);
   transform: translateY(-2px);
 }
-.doctor-service-card__title { font-size: 1rem; font-weight: 700; color: var(--color-text); }
-.doctor-service-card__desc { font-size: 0.875rem; line-height: 1.5; color: var(--color-text-muted); flex: 1; }
+.doctor-service-card__title { font-size: 1.0625rem; font-weight: 700; color: var(--color-text); }
+.doctor-service-card__desc { font-size: 0.9375rem; line-height: 1.5; color: var(--color-text-muted); flex: 1; }
 .doctor-service-card__link { font-size: 0.875rem; font-weight: 600; color: var(--color-primary); margin-top: 8px; }
 @media (max-width: 900px) { .doctor-services-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .doctor-services-grid { grid-template-columns: 1fr; } }
 
-/* Doctor card — single action */
-.doctor-card__actions { display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 8px; }
+/* Doctor card — arrow circle (replaces outline btn visually) */
+.doctor-card__actions { display: flex; justify-content: center; margin-top: 8px; }
+.doctor-card__actions .btn--outline {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+  background-color: white;
+  border: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23007D49' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color var(--transition);
+}
+.doctor-card:hover .doctor-card__actions .btn--outline {
+  background-color: #d4f0e3;
+}
+/* Stretched link — makes the entire card clickable via the arrow <a> */
+.doctor-card__actions .btn--outline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
 
 /* === TIMELINE === */
 .timeline { display: flex; flex-direction: column; gap: 0; }

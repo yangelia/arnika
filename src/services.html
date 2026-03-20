@@ -26,6 +26,14 @@
     <script type="module" src="./js/components.js"></script>
 
     <style>
+      /* Offset anchor scroll for sticky header */
+      #diagnostics,
+      #procedures,
+      #apparatus,
+      #prices {
+        scroll-margin-top: calc(var(--header-h) + 16px);
+      }
+
       /* ── Shared section spacing ── */
       .svc-section {
         padding: 72px 0;
@@ -100,20 +108,20 @@
         position: relative;
       }
       .diag-col__list li::before {
-        content: "·";
+        content: "●";
         position: absolute;
         left: 0;
-        color: var(--color-secondary);
-        font-size: 1.25rem;
-        line-height: 1;
-        top: 1px;
+        color: var(--color-primary);
+        font-size: 0.5rem;
+        line-height: 2.2;
+        top: 0;
       }
 
       /* ── PROCEDURE / METHOD CARDS (3-per-row) ── */
       .proc-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        gap: 32px;
       }
       .proc-card {
         background: var(--color-white);
@@ -163,7 +171,8 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: var(--color-primary);
+        background: white;
+        border: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -171,12 +180,12 @@
         transition: background var(--transition);
       }
       .proc-card:hover .proc-card__arrow {
-        background: var(--color-secondary);
+        background: #d4f0e3;
       }
       .proc-card__arrow svg {
         width: 18px;
         height: 18px;
-        color: white;
+        color: var(--color-primary);
       }
 
       /* ── Prices section ── */
@@ -190,7 +199,9 @@
 
       /* ── Responsive ── */
       @media (max-width: 1024px) {
-        .proc-card__title { font-size: 1.125rem; }
+        .proc-card__title {
+          font-size: 1.125rem;
+        }
         .proc-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -204,10 +215,17 @@
         .diag-col:nth-child(2) {
           border-bottom: 1px solid var(--color-border);
         }
+        /* Checkerboard: swap colors in second row */
+        .diag-col:nth-child(3) { background: var(--color-bg-soft); }
+        .diag-col:nth-child(4) { background: var(--color-bg); }
       }
       @media (max-width: 600px) {
-        .proc-card__title { font-size: 1rem; }
-        .proc-card__sub { font-size: 0.875rem; }
+        .proc-card__title {
+          font-size: 1rem;
+        }
+        .proc-card__sub {
+          font-size: 0.875rem;
+        }
         .svc-section {
           padding: 48px 0;
         }
@@ -239,19 +257,20 @@
       <section class="page-hero" aria-label="Послуги клініки">
         <div class="container">
           <h1>Послуги клініки</h1>
-          <p>
-            Діагностика, лікувальні процедури та авторські методики — все в
-            одному місці
-          </p>
+          <p>Комплексний підхід до вашого здоров'я</p>
         </div>
       </section>
 
       <!-- 3. DIAGNOSTICS -->
-      <section class="svc-section" aria-labelledby="diag-heading">
+      <section
+        id="diagnostics"
+        class="svc-section"
+        aria-labelledby="diag-heading"
+      >
         <div class="container">
           <div class="svc-section__header">
             <div class="svc-label">Діагностика</div>
-            <h2 id="diag-heading">Обстеження та діагностика</h2>
+            <h2 id="diag-heading">Точність, якій довіряють</h2>
           </div>
 
           <div class="diag-grid">
@@ -301,11 +320,15 @@
       </section>
 
       <!-- 4. PROCEDURES -->
-      <section class="svc-section section--alt" aria-labelledby="proc-heading">
+      <section
+        id="procedures"
+        class="svc-section section--alt"
+        aria-labelledby="proc-heading"
+      >
         <div class="container">
           <div class="svc-section__header">
             <div class="svc-label">Лікувальні процедури</div>
-            <h2 id="proc-heading">Процедури та лікування</h2>
+            <h2 id="proc-heading">Безпечно та ефективно</h2>
           </div>
 
           <div class="proc-grid">
@@ -475,11 +498,15 @@
       </section>
 
       <!-- 5. AUTHOR METHODS -->
-      <section class="svc-section" aria-labelledby="methods-heading">
+      <section
+        id="apparatus"
+        class="svc-section"
+        aria-labelledby="methods-heading"
+      >
         <div class="container">
           <div class="svc-section__header">
-            <div class="svc-label">Авторські методики</div>
-            <h2 id="methods-heading">Унікальні методики «Арніки»</h2>
+            <div class="svc-label">Апаратна терапія</div>
+            <h2 id="methods-heading">Для здоров'я та краси</h2>
           </div>
 
           <div class="proc-grid">
@@ -651,11 +678,15 @@
       </section>
 
       <!-- PRICES -->
-      <section class="prices-section" aria-labelledby="prices-heading">
+      <section
+        id="prices"
+        class="prices-section"
+        aria-labelledby="prices-heading"
+      >
         <div class="container">
           <div class="svc-section__header">
             <div class="svc-label">Прайс-лист</div>
-            <h2 id="prices-heading">Орієнтовні ціни на послуги</h2>
+            <h2 id="prices-heading">Доступність для кожного</h2>
             <p
               style="
                 margin-top: 8px;
@@ -1044,6 +1075,30 @@
     <!-- FOOTER -->
     <app-footer></app-footer>
 
-    <script type="module" src="./js/main.js"></script>
+    <script>
+      document
+        .querySelectorAll(".service-cat__header")
+        .forEach(function (header) {
+          header.addEventListener("click", function () {
+            var cat = header.closest(".service-cat");
+            var isOpen = cat.classList.contains("is-open");
+            document.querySelectorAll(".service-cat").forEach(function (c) {
+              c.classList.remove("is-open");
+              var h = c.querySelector(".service-cat__header");
+              if (h) h.setAttribute("aria-expanded", "false");
+            });
+            if (!isOpen) {
+              cat.classList.add("is-open");
+              header.setAttribute("aria-expanded", "true");
+            }
+          });
+          header.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              header.click();
+            }
+          });
+        });
+    </script>
   </body>
 </html>
